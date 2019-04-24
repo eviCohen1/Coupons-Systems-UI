@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public title: string;
+  public currentDate: Date;
+ 
   constructor() { }
 
   ngOnInit() {
+
+    this.title = "Coupons system "; //Detail from the server 
+    this.currentDate = new Date() 
   }
 
 }
