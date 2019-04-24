@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyComponent implements OnInit {
 
+  public companyTitle : string; 
+
   constructor() { }
 
   ngOnInit() {
+
+    this.companyTitle = "mPrest"; 
   }
 
 }
