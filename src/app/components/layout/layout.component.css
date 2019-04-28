@@ -3,7 +3,7 @@ section {
     border: none;
     background-attachment: fixed;
     background-size:  cover;
-    background-color: rgb(199, 200, 204);
+    background-color: #f2f2f2;
     text-align: left;
     box-sizing: border-box; /* Width and Height will include also the border. */
     display: grid;
@@ -17,14 +17,20 @@ section > * {
 
 header, footer {
     grid-column: span 12; /* Span over 12 columns */
+    background-color: #f2f2f2;
+    grid-row: 0;
 }
 
 aside {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 4;
     background-color: none;
+    background-color: #f2f2f2;
   }
 
 main {
     grid-column: span 10; /* Span over 10 columns */
+    grid-row: 0;
+    background-color: #f2f2f2;
+    padding: 0 150px;
 }
