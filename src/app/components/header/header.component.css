@@ -1,9 +1,9 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
-    .header a { 
+    .header span { 
         padding: 15px;
-      margin-left: 40px;  
+       margin-left: 40px;  
         font-size: 25px;
         color: #FFC312;
         font-family: "Times New Roman", Times, serif;
