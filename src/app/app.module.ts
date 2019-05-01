@@ -16,6 +16,7 @@ import { CouponDetailComponent } from './components/company/Coupons/coupon-detai
 import { couponListComponent } from './components/company/Coupons/coupon-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 
 
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
       CustomerComponent, 
       CouponFilterPipe,
       CouponDetailComponent,
-      couponListComponent
+      couponListComponent,
+      LogInComponent
         ],
   imports: [BrowserModule,AppRoutingModule,HttpClientModule,FormsModule],
   providers: [CouponService],
