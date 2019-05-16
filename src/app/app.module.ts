@@ -38,6 +38,6 @@ import { LogInComponent } from './components/log-in/log-in.component';
         ],
   imports: [BrowserModule,AppRoutingModule,HttpClientModule,FormsModule],
   providers: [CouponService],
-  bootstrap: [LogInComponent]
+  bootstrap: [LayoutComponent]
 })
 export class AppModule { }

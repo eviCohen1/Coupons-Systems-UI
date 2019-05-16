@@ -1,5 +1,4 @@
-
-  nav ul { 
+nav ul { 
     list-style-type: none;
     margin: 0 2% auto 0;
     padding-left: 0;
@@ -13,7 +12,7 @@ nav ul li {
 }
 nav ul li a {
     font-size: 20px;
-    color: #FFC312;
+    color: white;
     font-family: "Times New Roman", Times, serif; 
 }
 nav{ 
@@ -36,4 +35,7 @@ header {
     background-color: #595968;
 
 }
-  
+nav ul li a:hover{
+    color: #FFC312;
+    background-color: #595968;
+    }

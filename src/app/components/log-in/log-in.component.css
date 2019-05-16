@@ -28,22 +28,18 @@ margin-bottom: auto;
 width: 400px;
 background-color: rgba(0,0,0,0.5) !important;
 }
+.card-header{
+   padding: 20px;
+   margin-left: 68px 
+} 
+     
 
 .card-header span{
     font-size: 25px;
     color: #FFC312;
-    margin-right: 50% 
+
     }
-h3{
-        font-size: 25px;
-        color: #FFC312;
-        margin-right: 50% 
-        }   
 
-
-.card-header h3{
-color: white;
-}
 .d-flex { 
     margin-left: 60px 
 }
@@ -84,9 +80,7 @@ margin-right: 5px;
 color: black;
 background-color: #FFC312;
 width: 100px;
-margin:0 auto;
-margin-right:10px;
-float:left;
+padding-right: 20px;
 }
 
 .login_btn:hover{
@@ -98,12 +92,5 @@ background-color: white;
 color: white;
 }
 
-.links a{
-margin-left: 4px;
-}
 
-#h3{ 
-    margin-top: 10%; 
-    padding: 3%; 
-    marker: initial
-}
+
