@@ -17,6 +17,13 @@ import { couponListComponent } from './components/company/Coupons/coupon-list.co
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { AddCouponComponent } from './components/company/add-coupon/add-coupon.component';
+import { CompanyListComponent } from './components/admin/company-list/company-list.component';
+import { CustomerListComponent } from './components/admin/customer-list/customer-list.component';
+import { CouponListComponent } from './components/customer/coupon-list/coupon-list.component';
+import { PurchaseCouponComponent } from './components/customer/purchase-coupon/purchase-coupon.component';
+import { PurchasedCouponComponent } from './components/customer/purchased-coupon/purchased-coupon.component';
+
 
 
 
@@ -34,7 +41,14 @@ import { LogInComponent } from './components/log-in/log-in.component';
       CouponFilterPipe,
       CouponDetailComponent,
       couponListComponent,
-      LogInComponent
+      LogInComponent,
+      AddCouponComponent,
+      CompanyListComponent,
+      CustomerListComponent,
+      CouponListComponent,
+      PurchaseCouponComponent,
+      PurchasedCouponComponent
+    
         ],
   imports: [BrowserModule,AppRoutingModule,HttpClientModule,FormsModule],
   providers: [CouponService],
