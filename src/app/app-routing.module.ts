@@ -6,6 +6,12 @@ import { CompanyComponent } from './components/company/company.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CouponDetailComponent } from './components/company/Coupons/coupon-detail.component';
 import { couponListComponent } from './components/company/Coupons/coupon-list.component';
+import { CompanyListComponent } from './components/admin/company-list/company-list.component';
+import { CustomerListComponent } from './components/admin/customer-list/customer-list.component';
+import { AddCouponComponent } from './components/company/add-coupon/add-coupon.component';
+import { CouponListComponent } from './components/customer/coupon-list/coupon-list.component';
+import { PurchaseCouponComponent } from './components/customer/purchase-coupon/purchase-coupon.component';
+import { PurchasedCouponComponent } from './components/customer/purchased-coupon/purchased-coupon.component';
 
 const routes: Routes = [
   {path : "home", component: HomeComponent},
@@ -14,6 +20,14 @@ const routes: Routes = [
   {path : "customer", component: CustomerComponent},
   { path: 'coupons', component: couponListComponent},
   { path: 'coupon/:id',component:CouponDetailComponent},
+  { path: 'admin/company-list',component:CompanyListComponent},
+  { path: 'admin/customer-list',component:CustomerListComponent},
+  {path : "company/add-coupon", component: AddCouponComponent},
+  {path : "company/coupons", component: CompanyComponent},
+  {path : "custmer/coupon-list", component:CouponListComponent},
+  {path : "custmer/puschase-coupon", component:PurchaseCouponComponent}, 
+  {path : "custmer/puschased-coupon", component:PurchasedCouponComponent}, 
+  
 ];
 
 @NgModule({

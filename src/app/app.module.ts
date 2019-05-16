@@ -23,8 +23,8 @@ import { CustomerListComponent } from './components/admin/customer-list/customer
 import { CouponListComponent } from './components/customer/coupon-list/coupon-list.component';
 import { PurchaseCouponComponent } from './components/customer/purchase-coupon/purchase-coupon.component';
 import { PurchasedCouponComponent } from './components/customer/purchased-coupon/purchased-coupon.component';
-
-
+import { CompaniesComponent } from './components/admin/company-list/companies/companies.component';
+import { CustomersComponent } from './components/admin/customer-list/customers/customers.component';
 
 
 
@@ -47,7 +47,10 @@ import { PurchasedCouponComponent } from './components/customer/purchased-coupon
       CustomerListComponent,
       CouponListComponent,
       PurchaseCouponComponent,
-      PurchasedCouponComponent
+      PurchasedCouponComponent,
+      CompaniesComponent,
+      CustomersComponent
+      
     
         ],
   imports: [BrowserModule,AppRoutingModule,HttpClientModule,FormsModule],

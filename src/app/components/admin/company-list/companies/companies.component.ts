@@ -1,21 +1,17 @@
-import { Component, ViewEncapsulation, OnInit, DoCheck } from '@angular/core';
-import { CouponService } from "./coupon.service";
+import { Component, OnInit } from '@angular/core';
+import { CouponService } from 'src/app/components/company/Coupons/coupon.service';
 import { Subscription } from 'rxjs';
-import { Icoupons } from '../../../Interfaces/Icoupons';
+import { Icoupons } from 'src/app/Interfaces/Icoupons';
 
 @Component({
-  selector: 'pm-coupons',
-  templateUrl: "./coupon-list.component.html",
-  styleUrls: ['./coupon-list.component.css'],
-  encapsulation : ViewEncapsulation.None,
-  providers:[CouponService]
-  
-  
+  selector: 'app-companies',
+  templateUrl: './companies.component.html',
+  styleUrls: ['./companies.component.css'],
+
 })
+export class CompaniesComponent implements OnInit {
 
-export class couponListComponent implements OnInit, DoCheck {
-
-    pageTitle:string = " Coupon List ";
+  pageTitle:string = " Coupon List ";
     imageWidth:number = 40;
     imageMargin:number = 2 ; 
     showImage:Boolean = false;
@@ -44,8 +40,4 @@ export class couponListComponent implements OnInit, DoCheck {
         this.obsSubscription.unsubscribe;
         this.obsSubscriptionCoupons.unsubscribe;
     } 
-
-
-
-
-}
+  }

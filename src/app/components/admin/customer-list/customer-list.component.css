@@ -1,0 +1,47 @@
+nav ul { 
+    list-style-type: none;
+    margin: 0 2% auto 0;
+    padding-left: 0;
+    text-align: center;
+    max-width: 100%;
+}
+nav ul li { 
+    display: inline-block; 
+    line-height: 60px;
+    margin-left: 50px;
+}
+nav ul li a {
+    font-size: 20px;
+    color: white;
+    font-family: "Times New Roman", Times, serif; 
+}
+nav{ 
+
+    background-color: #a9abae
+
+}
+.second_navbar { 
+    background-color: #595968;
+    border-color: #595968
+}
+.navbar-brand { 
+    font-size: 25px;
+    color: #FFC312;
+    font-family: "Times New Roman", Times, serif;
+    padding-left: 64px
+
+}
+header { 
+    background-color: #595968;
+
+}
+nav ul li a:hover{
+    color: #FFC312;
+    background-color: #595968;
+    }
+
+#active { 
+        color: #FFC312;
+        text-decoration: underline
+
+    }

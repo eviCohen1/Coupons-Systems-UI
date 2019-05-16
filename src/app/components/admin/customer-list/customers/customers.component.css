@@ -34,8 +34,6 @@ tr:nth-child(first){
     background-color:lightgray; 
 }
 
-
-
 #Filter { 
 
     font-family: "Times New Roman", Times, serif;
@@ -51,10 +49,5 @@ tr:nth-child(first){
 } 
 #thead{  
     background: #595968
-}
-#active { 
-    color: #FFC312;
-    text-decoration: underline
-
 }
 

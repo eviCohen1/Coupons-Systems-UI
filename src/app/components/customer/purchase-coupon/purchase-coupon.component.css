@@ -1,0 +1,228 @@
+
+.card { 
+
+    border: 1px solid #ccc;
+    text-align: center;
+    /* padding: 5% ;  */
+    /* border-spacing: 1px; */
+    width: 100px;
+    height: 350px;
+  }
+  
+  .card-img-top{
+    padding-top: 10% ; 
+    position: center;
+  
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  table > tbody > tr > td { 
+    padding: 35px;
+    position: center 
+  }
+  
+  element{
+      color :greenyellow; 
+      font-family:Verdana; 
+  }
+  p{
+      color:rgb(56, 55, 55);
+  }
+  body{ 
+    background-size: 100%;
+    background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-color:#f2f2f2;
+  }
+  
+  .w3-container{ 
+      display: block;
+      margin-left: 10%;
+      width:100%;
+      padding: 1.5%;
+    }
+  
+  
+  
+  /* Tooltip container */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted rgb(165, 168, 135); /* If you want dots under the hoverable text */
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color:rgb(165, 168, 135);
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 2px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 250px;
+  }
+  
+  .gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .desc {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .first_div{ 
+    margin: 5px;
+    float: left;
+    width: 250px;
+  } 
+  
+  .second_div{ 
+    margin: 5px;
+    float: left;
+    width: 250px;
+  }
+  .third_div{ 
+    margin: 5px;
+    float: left;
+    width: 250px;
+  } 
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+   /* Full-width input fields */
+   
+   input[type = email] {
+    text-align:center;
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    background-color: rgb(207, 207, 207);
+    color:rgb(26, 24, 24);
+    border-radius: 6px;
+    box-sizing: border-box
+  }
+  
+  input[type = phone] {
+    text-align:center;
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    background-color: rgb(207, 207, 207);
+    color:rgb(26, 24, 24);
+    border-radius: 6px;
+    box-sizing: border-box
+  }
+  
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid rgb(226, 183, 65);
+    margin-bottom: 50px;
+  }
+  
+  /* Set a style for the submit/register button */
+  .registerbtn {
+    text-align:center;
+    background-color: rgb(226, 183, 65);
+    color: white;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 1;
+    padding: 15px 22px;
+    margin: 8px 0;
+    border-radius: 10px;
+   
+  }
+  
+  .registerbtn:hover {
+    opacity:1;
+  }
+  
+    
+    .btn-group button:not(:last-child) {
+      border-right:none; /* Prevent double borders */
+    }
+    
+    /* Clear floats (clearfix hack) */
+    .btn-group:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  
+    nav ul { 
+      list-style-type: none;
+      margin: 0 2% auto 0;
+      padding-left: 0;
+      text-align: center;
+      max-width: 100%;
+  }
+  nav ul li { 
+      display: inline-block; 
+      line-height: 60px;
+      margin-left: 50px;
+  }
+  nav ul li a {
+      font-size: 20px;
+      color: white;
+      font-family: "Times New Roman", Times, serif; 
+  }
+  nav{ 
+  
+      background-color: #a9abae
+  
+  }
+  .second_navbar { 
+      background-color: #595968;
+      border-color: #595968
+  }
+  .navbar-brand { 
+      font-size: 25px;
+      color: #FFC312;
+      font-family: "Times New Roman", Times, serif;
+      padding-left: 64px
+  
+  }
+  header { 
+      background-color: #595968;
+  
+  }
+  nav ul li a:hover{
+      color: #FFC312;
+      background-color: #595968;
+      }
+  
+      #active { 
+        color: #FFC312;
+        text-decoration: underline
+  
+    }

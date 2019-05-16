@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PurchaseCouponComponent implements OnInit {
 
+  public customerTitle: string;
+
   constructor() { }
 
   ngOnInit() {
+
+    this.customerTitle = "Evi Cohen"
   }
 
 }
