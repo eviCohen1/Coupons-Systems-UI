@@ -25,19 +25,46 @@
 				<span><i class="fas fa-ticket-alt">   e-Coupon</i></span>
 			</div>
 			<div class="card-body">
-				<form>
+				<form (ngSubmit)="onSubmit(f)" #f="ngForm">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" 
+							   class="form-control" 
+							   placeholder="username"
+							   ngModel
+							   required
+							   name="username"
+							   id="username">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" 
+							   class="form-control" 
+							   placeholder="password"
+							   ngModel
+							   name="password"
+							   required
+							   id="password">
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<select id="client"  
+								name="client" 
+								class="form-control" 
+								palceholder="client"
+								required 
+								ngModel>
+							<option value="Admin">Admin</option>
+							<option value="Company">Company</option>
+							<option value="Customer">Customer</option>
+						  </select>
 					</div>
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-left login_btn">
@@ -45,12 +72,14 @@
 				</form>
 			</div>
 			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
+				<div class = "btn-group">
+					<a href="mailto:evi.cohen1@gmail.com" target="_blank"><button><img src="https://pngimg.com/uploads/email/email_PNG56.png"  /></button></a>
+					<a href="https://www.facebook.com/" target="_blank"><button><img src="http://www.baronita.co.il/vault/icons/blue-facebook-logo.png"  /></button></a>
+					<a href="https://www.linkedin.com/in/evi-cohen-55218883/" target="_blank"><button> <img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG38.png"  /> </button></a>				
+              	</div> 
+	            <div class="tooltip"> DESGIN by: Evi Cohen
+					<span class="tooltiptext">The king</span>
+			</div>
 			</div>
 		</div>
 	</div>

@@ -1,7 +1,8 @@
 import { Component, ViewEncapsulation, OnInit, DoCheck } from '@angular/core';
 import { CouponService } from "./coupon.service";
 import { Subscription } from 'rxjs';
-import { Icoupons } from '../../../Interfaces/Icoupons';
+import { Icoupons } from 'src/app/Interfaces/Icoupons';
+
 
 @Component({
   selector: 'pm-coupons',

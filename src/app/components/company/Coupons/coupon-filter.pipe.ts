@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform} from '@angular/core';
-import {Icoupons} from '../../../Interfaces/Icoupons';
+import { Icoupons } from 'src/app/Interfaces/Icoupons';
+
 @Pipe({
     name:'couponFilter'
 })

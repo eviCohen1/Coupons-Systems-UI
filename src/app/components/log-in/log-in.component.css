@@ -94,3 +94,44 @@ color: white;
 
 
 
+/*footer group*/
+.btn-group button {
+    /* background-color:rgb(85, 80, 57);  */
+   /* color: rgb(17, 17, 17); White text */
+   padding: 20px 36px; /* Some padding */
+   cursor: pointer; /* Pointer/hand icon */
+   float: CENTER; /* Float the buttons side by side */
+   opacity: 0.4;
+   text-align: center;
+ }
+ 
+ .btn-group button:not(:last-child) {
+   border-right:none; /* Prevent double borders */
+ }
+ 
+ /* Clear floats (clearfix hack) */
+ .btn-group:after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+ 
+ /* Add a background color on hover */
+ .btn-group button:hover {
+   background-color: rgb(243, 205, 123);
+ }
+ img[src="https://pngimg.com/uploads/email/email_PNG56.png"] {
+   border-radius: 6px;
+   padding: 5px;
+   width: 45px;
+    }
+    img[src="http://www.baronita.co.il/vault/icons/blue-facebook-logo.png"] {
+     border-radius: 6px;
+     padding: 5px;
+     width: 45px;
+      }
+      img[src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG38.png"] {
+       border-radius: 6px;
+       padding: 5px;
+       width: 45px;
+        }

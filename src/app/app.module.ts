@@ -51,10 +51,11 @@ import { CustomersComponent } from './components/admin/customer-list/customers/c
       CompaniesComponent,
       CustomersComponent
       
+      
     
         ],
   imports: [BrowserModule,AppRoutingModule,HttpClientModule,FormsModule],
   providers: [CouponService],
-  bootstrap: [LayoutComponent]
+  bootstrap: [LogInComponent]
 })
 export class AppModule { }

@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router';
-import { Icoupons } from '../../../Interfaces/Icoupons';
+
 import { CouponService } from './coupon.service';
+import { Icoupons } from 'src/app/Interfaces/Icoupons';
 
 @Component({
     templateUrl: './coupon-detail.component.html'
