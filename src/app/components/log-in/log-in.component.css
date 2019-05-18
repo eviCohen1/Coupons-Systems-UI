@@ -37,8 +37,23 @@ background-color: rgba(0,0,0,0.5) !important;
 .card-header span{
     font-size: 25px;
     color: #FFC312;
+    margin: 50px;
 
     }
+
+.powerBy { 
+    font-size: 25px;
+    color: #FFC312;
+    margin: 60px;
+    padding-left: 25px
+
+}
+
+.submit{ 
+    padding-left: 150px; 
+    /* padding: 10px */
+    padding-top: 10px
+}
 
 .d-flex { 
     margin-left: 60px 
@@ -96,12 +111,13 @@ color: white;
 
 /*footer group*/
 .btn-group button {
-    /* background-color:rgb(85, 80, 57);  */
+    background-color:transparent; 
    /* color: rgb(17, 17, 17); White text */
+   border: transparent;
    padding: 20px 36px; /* Some padding */
    cursor: pointer; /* Pointer/hand icon */
    float: CENTER; /* Float the buttons side by side */
-   opacity: 0.4;
+   opacity: 0.8;
    text-align: center;
  }
  

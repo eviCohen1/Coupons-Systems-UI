@@ -39,6 +39,10 @@ client = "Admin";
         
 
     }
+    else 
+     { 
+       alert ( "The password or user name not correct, please try again")
+     }
 
   }
 }
