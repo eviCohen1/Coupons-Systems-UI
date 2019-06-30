@@ -13,7 +13,8 @@ public customerTitle: string;
 
   ngOnInit() {
 
-    this.customerTitle = "Evi Cohen"
+    this.customerTitle = "Evi Cohen"; 
+    
   }
 
 }

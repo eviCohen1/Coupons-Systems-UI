@@ -25,6 +25,9 @@ import { PurchaseCouponComponent } from './components/customer/purchase-coupon/p
 import { PurchasedCouponComponent } from './components/customer/purchased-coupon/purchased-coupon.component';
 import { CompaniesComponent } from './components/admin/company-list/companies/companies.component';
 import { CustomersComponent } from './components/admin/customer-list/customers/customers.component';
+import { RouterModule, ROUTES } from '@angular/router';
+import { logging } from 'protractor';
+import { JoinService } from './join.service';
 
 
 
@@ -54,8 +57,12 @@ import { CustomersComponent } from './components/admin/customer-list/customers/c
       
     
         ],
-  imports: [BrowserModule,AppRoutingModule,HttpClientModule,FormsModule],
-  providers: [CouponService],
-  bootstrap: [LogInComponent]
+  imports: [BrowserModule,
+            AppRoutingModule,
+            HttpClientModule,
+            FormsModule
+          ],
+  providers: [CouponService,JoinService],
+  bootstrap: [LayoutComponent]
 })
 export class AppModule { }

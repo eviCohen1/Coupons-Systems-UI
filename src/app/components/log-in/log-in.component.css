@@ -3,7 +3,11 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+/* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); */
+/* background-image: url('http://getwallpapers.com/wallpaper/full/8/9/0/470556.jpg'); */
+/* background-image: url('http://getwallpapers.com/wallpaper/full/5/a/7/630463.jpg'); */
+
+background-image: url('http://getwallpapers.com/wallpaper/full/b/c/5/1091008-large-christmas-gift-background-1920x1080.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -117,8 +121,10 @@ color: white;
    padding: 20px 36px; /* Some padding */
    cursor: pointer; /* Pointer/hand icon */
    float: CENTER; /* Float the buttons side by side */
-   opacity: 0.8;
+   opacity: 0.5;
    text-align: center;
+   /* background-color: black;  */
+   
  }
  
  .btn-group button:not(:last-child) {

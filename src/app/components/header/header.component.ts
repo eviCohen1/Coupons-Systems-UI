@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { timeInterval } from 'rxjs/operators';
 import { Time } from '@angular/common';
 
@@ -12,13 +12,15 @@ export class HeaderComponent implements OnInit {
   public currentDate: Date;
   public temp; 
   public currentTime: Date;
-  constructor() { }
+  constructor() { };
+  @Input() public isUserLoggedIn: boolean 
 
   ngOnInit() {
 
     this.currentDate =new Date(); 
     this.currentTime = new Date(); 
     this.temp = 25.5;
+    this.isUserLoggedIn = true; 
   }
 
 }

@@ -13,21 +13,24 @@ import { CouponListComponent } from './components/customer/coupon-list/coupon-li
 import { PurchaseCouponComponent } from './components/customer/purchase-coupon/purchase-coupon.component';
 import { PurchasedCouponComponent } from './components/customer/purchased-coupon/purchased-coupon.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 const routes: Routes = [
-  {path : "home", component: LayoutComponent},
+  {path: '' , component:LogInComponent},
+  {path : 'home', component: LayoutComponent},
   {path : "admin", component: AdminComponent},
   {path : "company", component: CompanyComponent},
   {path : "customer", component: CustomerComponent},
-  { path: 'coupons', component: couponListComponent},
-  { path: 'coupon/:id',component:CouponDetailComponent},
-  { path: 'admin/company-list',component:CompanyListComponent},
-  { path: 'admin/customer-list',component:CustomerListComponent},
+  {path: 'coupons', component: couponListComponent},
+  {path: 'coupon/:id',component:CouponDetailComponent},
+  {path: 'admin/company-list',component:CompanyListComponent},
+  {path: 'admin/customer-list',component:CustomerListComponent},
   {path : "company/add-coupon", component: AddCouponComponent},
   {path : "company/coupons", component: CompanyComponent},
   {path : "custmer/coupon-list", component:CouponListComponent},
   {path : "custmer/puschase-coupon", component:PurchaseCouponComponent}, 
   {path : "custmer/puschased-coupon", component:PurchasedCouponComponent}, 
+  {path : 'LogIn' ,component:LogInComponent}
 
   
   

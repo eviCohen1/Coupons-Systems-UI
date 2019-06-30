@@ -1,13 +1,13 @@
-<section> 
 
-  <header>
+<app-log-in *ngIf = "!isUserLoggedIn"></app-log-in>
+<section *ngIf = "isUserLoggedIn"> 
+  <header >
      <app-header></app-header>
   </header>   
-  <aside>
+  <aside >
      <app-menu></app-menu>
   </aside>
-  <main>
+  <main >
     <router-outlet></router-outlet> 
   </main> 
-
 </section>
