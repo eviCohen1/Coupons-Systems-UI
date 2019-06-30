@@ -28,6 +28,7 @@ import { CustomersComponent } from './components/admin/customer-list/customers/c
 import { RouterModule, ROUTES } from '@angular/router';
 import { logging } from 'protractor';
 import { JoinService } from './join.service';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -62,7 +63,7 @@ import { JoinService } from './join.service';
             HttpClientModule,
             FormsModule
           ],
-  providers: [CouponService,JoinService],
+  providers: [CouponService,JoinService,CookieService],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }

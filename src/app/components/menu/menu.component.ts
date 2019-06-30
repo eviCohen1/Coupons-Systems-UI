@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { JoinService } from 'src/app/join.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class MenuComponent implements OnInit {
   public isCompanyLoggedIn:boolean  = false; 
   public isUserLoggedIn: boolean  = false; 
 
-  constructor(private service : JoinService) { }
+  constructor(private service : JoinService,private router: Router) { }
 
   ngOnInit() {
   
@@ -26,14 +27,12 @@ export class MenuComponent implements OnInit {
       this.isCustomerLoggedIn = join[3]; 
 
     })
-
-  
     
   }
 
- 
   logOut ()  { 
-    this.service.subject.next([false,false,false,false]);
+    this.service.subject.next([false,false,false,false])
+    this.router.navigate(['LogIn']);
   }
  
 
