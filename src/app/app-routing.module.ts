@@ -23,13 +23,13 @@ const routes: Routes = [
   {path : "customer", component: CustomerComponent},
   {path: 'coupons', component: couponListComponent},
   {path: 'coupon/:id',component:CouponDetailComponent},
-  {path: 'admin/company-list',component:CompanyListComponent},
-  {path: 'admin/customer-list',component:CustomerListComponent},
-  {path : "company/add-coupon", component: AddCouponComponent},
-  {path : "company/coupons", component: CompanyComponent},
-  {path : "custmer/coupon-list", component:CouponListComponent},
-  {path : "custmer/puschase-coupon", component:PurchaseCouponComponent}, 
-  {path : "custmer/puschased-coupon", component:PurchasedCouponComponent}, 
+  {path: "companyList",component:CompanyListComponent},
+  {path: "customerList",component:CustomerListComponent},
+  {path : "addCoupon", component: AddCouponComponent},
+  {path : "companyCoupons", component: CompanyComponent},
+  {path : "couponList", component:CouponListComponent},
+  {path : "puschaseCoupon", component:PurchaseCouponComponent}, 
+  {path : "puschasedCoupon", component:PurchasedCouponComponent}, 
   {path : 'LogIn' ,component:LogInComponent}
 
   

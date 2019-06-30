@@ -152,18 +152,26 @@ height: 100%;
 }
 
 .logOutButton { 
-  position:relative;
-  display:table;
-  border-collapse:none;
+  position:right;
+  border:none;
   border-spacing:0;
   color:#f2f2f2;
-   font-family: arial;
+  font-family: arial;
   font-size: 20px;
   text-decoration:none;
   -webkit-transition:all .1s linear;
   transition:all .1s linear;
   background:#595968;
 }
+
+.logOutButton .nav-text {
+  position:right;
+  display:table-cell;
+  vertical-align:middle;
+  width:20px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
 
 .logOutButton :hover { 
 color:rgb(49, 47, 47);
