@@ -3,15 +3,15 @@ import { Injectable } from "@angular/core";
 import {HttpClient, HttpErrorResponse} from '@angular/common/http'
 import{Observable, throwError} from 'rxjs'
 import{catchError, map} from 'rxjs/operators'
-import { Icoupons } from 'src/app/Interfaces/Icoupons';
 import { CookieService } from 'ngx-cookie-service';
+import { company } from 'src/app/Interfaces/Icompany';
 
 @Injectable()
-export class CouponService {
+export class CompaniesService {
    
     private _sessionId: string; 
-    private _couponsURL = 'https://coupons-b1a31.firebaseio.com/.json'; //FireBase 
-    // private _couponsURL = 'http://localhost:8080/CouponProject/rest/company/getAllCompanyCoupons'; 
+    private _companyURL = './assets/api/companies.json'; //json
+    // private _customersURL = 'http://localhost:8080/CouponProject/rest/admin/getAllCompanies'; 
     constructor(private http:HttpClient, private cookieService: CookieService){
         this._sessionId = cookieService.get("sessionId");
         
@@ -23,11 +23,11 @@ export class CouponService {
         this.cookieService.set("sessionId", value);
       }
     
-    getCoupons():Observable<Icoupons[]> 
+    getCompanies():Observable<company[]> 
     { 
         let myHeader = new Headers();
         myHeader.append('SET-COOKIE', 'JSESSIONID=<_sessionId>');
-        return this.http.get<Icoupons[]>(this._couponsURL).pipe(
+        return this.http.get<company[]>(this._companyURL).pipe(
             catchError(
                 (error:HttpErrorResponse)=>{
                     console.log(error)
@@ -36,11 +36,6 @@ export class CouponService {
             )
         )
     }
-    getCouponById(id: number): Observable<Icoupons> {
-        return this.getCoupons().pipe(
-            map((data) => data.find(p => p.id == id))
-        )
-       }
  
    
     }

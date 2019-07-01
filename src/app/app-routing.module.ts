@@ -14,6 +14,10 @@ import { PurchaseCouponComponent } from './components/customer/purchase-coupon/p
 import { PurchasedCouponComponent } from './components/customer/purchased-coupon/purchased-coupon.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { AddCompanyComponent } from './components/admin/addCompany/addCompany.component';
+import { AddCustomerComponent } from './components/admin/addCustomer/addCustomer.component';
+import { UpdateCompanyComponent } from './components/admin/updateCompany/updateCompany.component';
+import { UpdateCustomerComponent } from './components/admin/updateCustomer/updateCustomer.component';
 
 const routes: Routes = [
   {path: '' , component:LogInComponent},
@@ -30,7 +34,11 @@ const routes: Routes = [
   {path : "couponList", component:CouponListComponent},
   {path : "puschaseCoupon", component:PurchaseCouponComponent}, 
   {path : "puschasedCoupon", component:PurchasedCouponComponent}, 
-  {path : 'LogIn' ,component:LogInComponent}
+  {path : 'LogIn' ,component:LogInComponent}, 
+  {path : "addCompany", component:AddCompanyComponent}, 
+  {path : "addCustomer", component:AddCustomerComponent}, 
+  {path : "updateCompany", component:UpdateCompanyComponent}, 
+  {path : "updateCustomer", component : UpdateCustomerComponent}
 
   
   

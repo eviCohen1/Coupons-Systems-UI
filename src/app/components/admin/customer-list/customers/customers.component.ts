@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Icoupons } from 'src/app/Interfaces/Icoupons';
 import { Subscription } from 'rxjs';
-import { CouponService } from 'src/app/components/company/Coupons/coupon.service';
+import { customer } from 'src/app/Interfaces/Icustomer';
+import { CustomersService } from './customers.service';
 
 @Component({
   selector: 'app-customers',
@@ -15,16 +15,16 @@ export class CustomersComponent implements OnInit {
   imageMargin:number = 2 ; 
   showImage:Boolean = false;
   listFilter:string ='';
-  coupons:Icoupons[];
+  customer : customer[]; 
   obsSubscription:Subscription;
   obsSubscriptionCoupons:Subscription; 
   
-  constructor(private srvProduct:CouponService) {   
+  constructor(private srvProduct:CustomersService) {   
   }
 
   ngOnInit(): void {
-      this.obsSubscriptionCoupons = this.srvProduct.getCoupons().subscribe(
-          (data) => {this.coupons=data});
+      this.obsSubscriptionCoupons = this.srvProduct.getCustomers().subscribe(
+          (data) => {this.customer=data});
           (err:any) => console.log(err)
   }
   ngDoCheck():void { 

@@ -26,9 +26,16 @@ import { PurchasedCouponComponent } from './components/customer/purchased-coupon
 import { CompaniesComponent } from './components/admin/company-list/companies/companies.component';
 import { CustomersComponent } from './components/admin/customer-list/customers/customers.component';
 import { RouterModule, ROUTES } from '@angular/router';
-import { logging } from 'protractor';
 import { JoinService } from './join.service';
 import { CookieService } from 'ngx-cookie-service';
+import { AddCompanyComponent } from './components/admin/addCompany/addCompany.component';
+import { AddCustomerComponent } from './components/admin/addCustomer/addCustomer.component';
+import { UpdateCustomerComponent } from './components/admin/updateCustomer/updateCustomer.component';
+import { UpdateCompanyComponent } from './components/admin/updateCompany/updateCompany.component';
+import { CustomersService } from './components/admin/customer-list/customers/customers.service';
+import { CustomerFilterPipe } from './components/admin/customer-list/customers/customer-filter.pipe';
+import { CompaniesService } from './components/admin/company-list/companies/companies.service';
+import { CompanyFilterPipe } from './components/admin/company-list/companies/companies-filter.pipe';
 
 
 
@@ -53,17 +60,21 @@ import { CookieService } from 'ngx-cookie-service';
       PurchaseCouponComponent,
       PurchasedCouponComponent,
       CompaniesComponent,
-      CustomersComponent
-      
-      
-    
+      CustomersComponent,
+      AddCompanyComponent,
+      AddCustomerComponent, 
+      UpdateCustomerComponent,
+      UpdateCompanyComponent, 
+      CustomerFilterPipe,
+      CompanyFilterPipe
+       
         ],
   imports: [BrowserModule,
             AppRoutingModule,
             HttpClientModule,
             FormsModule
           ],
-  providers: [CouponService,JoinService,CookieService],
+  providers: [CouponService,JoinService,CookieService,CustomersService,CompaniesService],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }

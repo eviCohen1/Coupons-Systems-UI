@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CouponService } from 'src/app/components/company/Coupons/coupon.service';
 import { Subscription } from 'rxjs';
-import { Icoupons } from 'src/app/Interfaces/Icoupons';
+import { company } from 'src/app/Interfaces/Icompany';
+import { CompaniesService } from './companies.service';
 
 @Component({
   selector: 'app-companies',
@@ -11,21 +12,21 @@ import { Icoupons } from 'src/app/Interfaces/Icoupons';
 })
 export class CompaniesComponent implements OnInit {
 
-  pageTitle:string = " Coupon List ";
+  pageTitle:string = "Company List";
     imageWidth:number = 40;
     imageMargin:number = 2 ; 
     showImage:Boolean = false;
     listFilter:string ='';
-    coupons:Icoupons[];
+    company:company[];
     obsSubscription:Subscription;
     obsSubscriptionCoupons:Subscription
 
-    constructor(private srvProduct:CouponService) {   
+    constructor(private srvProduct:CompaniesService) {   
     }
 
     ngOnInit(): void {
-        this.obsSubscriptionCoupons = this.srvProduct.getCoupons().subscribe(
-            (data) => {this.coupons=data});
+        this.obsSubscriptionCoupons = this.srvProduct.getCompanies().subscribe(
+            (data) => {this.company=data});
             (err:any) => console.log(err)
     }
     ngDoCheck():void { 
