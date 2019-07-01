@@ -36,6 +36,10 @@ import { CustomersService } from './components/admin/customer-list/customers/cus
 import { CustomerFilterPipe } from './components/admin/customer-list/customers/customer-filter.pipe';
 import { CompaniesService } from './components/admin/company-list/companies/companies.service';
 import { CompanyFilterPipe } from './components/admin/company-list/companies/companies-filter.pipe';
+import { AddCompanyService } from './components/admin/addCompany/addCompany.service';
+import { UpdateCouponComponent } from './components/company/updateCoupon/updateCoupon.component';
+import { CouponListComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-list.component';
+import { AuthenticationService } from './components/log-in/AuthenticationService.service';
 
 
 
@@ -66,7 +70,9 @@ import { CompanyFilterPipe } from './components/admin/company-list/companies/com
       UpdateCustomerComponent,
       UpdateCompanyComponent, 
       CustomerFilterPipe,
-      CompanyFilterPipe
+      CompanyFilterPipe,
+      UpdateCouponComponent,
+      CouponListComponentCustomer 
        
         ],
   imports: [BrowserModule,
@@ -74,7 +80,13 @@ import { CompanyFilterPipe } from './components/admin/company-list/companies/com
             HttpClientModule,
             FormsModule
           ],
-  providers: [CouponService,JoinService,CookieService,CustomersService,CompaniesService],
+  providers: [CouponService,
+              JoinService,
+              CookieService,
+              CustomersService,
+              CompaniesService,
+              AddCompanyService,
+              AuthenticationService],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }

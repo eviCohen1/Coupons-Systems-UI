@@ -41,6 +41,10 @@ export class couponListComponent implements OnInit, DoCheck {
         this.showImage=!this.showImage;
 
     }
+    deleteCoupon(title) { 
+
+        window.alert("delete coupon " + title); 
+    }
     ngDestroy() { 
         this.obsSubscription.unsubscribe;
         this.obsSubscriptionCoupons.unsubscribe;

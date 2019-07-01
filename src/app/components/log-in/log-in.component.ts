@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { viewAttached } from '@angular/core/src/render3/instructions';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { JoinService } from 'src/app/join.service';
+import { AuthenticationService } from './AuthenticationService.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-log-in',
@@ -17,14 +19,26 @@ username = "evic";
 password = "221284"; 
 client = "Admin";
 
+public name :String; 
+public pass : String; 
+public type : String;  
+
 isCompanyLoggedIn:boolean ; 
 isAdminLoggedIn:boolean ; 
 isCustomerLoggedIn:boolean; 
 isUserLoggedIn: boolean;
 join  = []
+obsSubscription:Subscription;
+returnUrl: string;
+  error: any;
+  loading: boolean;
 
 
-  constructor(private _router:Router,private route:ActivatedRoute, private service :JoinService) { }
+  constructor(
+              private _router:Router,
+              private route:ActivatedRoute, 
+              private service :JoinService,
+              private authService : AuthenticationService              ) { }
 
   ngOnInit() {
 
@@ -32,7 +46,6 @@ join  = []
     this.isAdminLoggedIn = false;  
     this.isCompanyLoggedIn = false; 
     this.isCustomerLoggedIn = false; 
-
   }
 
   onSubmit()
@@ -41,12 +54,22 @@ join  = []
       
     // })
     console.log(this.signupForm);
-    console.log(this.signupForm.value.username);
-    console.log(this.signupForm.value.password); 
-    console.log(this.signupForm.value.client); 
 
+    this.name = this.signupForm.value.username;
+    this.pass = this.signupForm.value.password; 
+    this.type = this.signupForm.value.client; 
+    
+    // this.obsSubscription = this.authService.login(this.name,this.pass,this.type).subscribe( 
 
-    switch(this.signupForm.value.client) { 
+    //   (data) => {
+    //             this._router.navigate([this.returnUrl]);
+    //           },
+    //           error => {
+    //             this.error = error;
+    //             this.loading = false;
+    //         });
+
+    switch(this.type) { 
       case "Admin": { 
      
         if (this.signupForm.value.username == this.username && 

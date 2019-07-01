@@ -5,7 +5,7 @@ import { Icoupons } from 'src/app/Interfaces/Icoupons';
 
 
 @Component({
-  selector: 'pm-coupons',
+  selector: 'pm-couponsCustomer',
   templateUrl: "./coupon-list.component.html",
   styleUrls: ['./coupon-list.component.css'],
   encapsulation : ViewEncapsulation.None,
@@ -14,7 +14,7 @@ import { Icoupons } from 'src/app/Interfaces/Icoupons';
   
 })
 
-export class couponListComponent implements OnInit, DoCheck {
+export class CouponListComponentCustomer implements OnInit, DoCheck {
 
     pageTitle:string = " Coupon List ";
     imageWidth:number = 40;
@@ -40,6 +40,10 @@ export class couponListComponent implements OnInit, DoCheck {
 
         this.showImage=!this.showImage;
 
+    }
+    deleteCoupon(title) { 
+
+        window.alert("delete coupon " + title); 
     }
     ngDestroy() { 
         this.obsSubscription.unsubscribe;

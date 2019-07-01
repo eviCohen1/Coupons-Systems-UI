@@ -26,6 +26,7 @@
                         <th>Message </th>
                         <th>Price </th>
                         <th>Available</th> 
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,11 +44,10 @@
                         <th>{{coupon.message|uppercase}} </th>
                         <th>{{coupon.price|currency}} </th>
                         <th>{{coupon.active}}</th> 
-
+                        <td><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCoupon(coupon.title)'> Remove</button></td> 
                     </tr>
                 </tbody>
             </table>
-        
         
         </div>
         
