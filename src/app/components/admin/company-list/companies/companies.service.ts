@@ -10,8 +10,8 @@ import { company } from 'src/app/Interfaces/Icompany';
 export class CompaniesService {
    
     private _sessionId: string; 
-    private _companyURL = './assets/api/companies.json'; //json
-    // private _customersURL = 'http://localhost:8080/CouponProject/rest/admin/getAllCompanies'; 
+    // private _companyURL = './assets/api/companies.json'; //json
+    private _companyURL = 'http://localhost:8080/CouponProject/rest/admin/getAllCompanies'; 
     constructor(private http:HttpClient, private cookieService: CookieService){
         this._sessionId = cookieService.get("sessionId");
         
@@ -31,8 +31,9 @@ export class CompaniesService {
             catchError(
                 (error:HttpErrorResponse)=>{
                     console.log(error)
-                    return throwError("Error in the http getProducts")
+                    return throwError("Error in the http get company List")
                 }
+            
             )
         )
     }

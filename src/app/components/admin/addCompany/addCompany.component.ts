@@ -1,8 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { AddCompanyService } from './addCompany.service';
-import { company } from 'src/app/Interfaces/Icompany';
 import { Subscription } from 'rxjs';
+import { NgForm } from "@angular/forms";
 
 @Component( { 
     selector:"app-addCompany", 
@@ -13,15 +12,44 @@ import { Subscription } from 'rxjs';
 export class AddCompanyComponent implements OnInit { 
 
     obsSubscription:Subscription;
-    company:company; 
+    public response:String;
+    @ViewChild('f') addCompanyForm:NgForm; 
+    public name :String; 
+    public pass : String; 
+    public email : String;  
+    loading: boolean;
+
+
 
     constructor (private srvAddCompany: AddCompanyService) { }
     ngOnInit () : void { 
-        this.obsSubscription = this.srvAddCompany.addCompany(this.company).subscribe( 
-            (data) => { this.company=data}); 
-            (err:any) => console.log(err)
+    
+    }
+
+    onSubmit() { 
+
         
+        this.name = this.addCompanyForm.value.name;
+        this.pass = this.addCompanyForm.value.pass; 
+        this.email = this.addCompanyForm.value.email; 
+
+        this.loading = true;
         
+        this.obsSubscription = this.srvAddCompany.addCompany(this.name,this.pass,this.email)
+        .subscribe( 
+            (data) => { 
+                this.response = data;
+                alert(this.response); 
+                this.loading = false;
+            },
+            (err:any) => {
+                this.response = null;
+                alert(err);
+                this.loading = false;
+            }
+        ); 
+        
+                        
     }
 
     ngDestroy() { 

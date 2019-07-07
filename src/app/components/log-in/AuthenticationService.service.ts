@@ -10,22 +10,19 @@ import { catchError } from 'rxjs/operators';
 
     private currentUserSubject : BehaviorSubject<any>; 
     public currentUser : Observable<any>; 
-    private _urlLogin = "http://localhost:8080/CouponProject/login";
+    private _urlLogin = "http://localhost:8080/CouponProject/rest/LoginService/login ";
 
     constructor ( private http: HttpClient) { }
 
-    login ( name,pass,type)  { 
-        return this.http.post<any>( this._urlLogin, {name,pass,type}).pipe(
+    login (user)  { 
+        return this.http.post<any>( this._urlLogin, user).pipe(
             catchError(
             (error:HttpErrorResponse)=>{
                 console.log(error)
-                return throwError("Error in the http getProducts")
+                return throwError("Error to log in ")
             }
         )
     )
     }
-
-
-
 
   }

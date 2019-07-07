@@ -1,37 +1,38 @@
 
 import { Injectable } from "@angular/core";
-import {HttpClient, HttpErrorResponse} from '@angular/common/http'
-import{Observable, throwError} from 'rxjs'
+import {HttpClient, HttpErrorResponse, HttpParams, HttpHeaders} from '@angular/common/http'
+import{Observable, throwError, observable} from 'rxjs'
 import{catchError, map} from 'rxjs/operators'
 import { CookieService } from 'ngx-cookie-service';
-import { company } from 'src/app/Interfaces/Icompany';
 
 @Injectable()
 export class AddCompanyService {
    
     private _sessionId: string; 
-    private _companyURL = 'http://localhost:8080/CouponProject/rest/admin/createCompany'; //json
-    // private _customersURL = 'http://localhost:8080/CouponProject/rest/admin/getAllCompanies'; 
-    constructor(private http:HttpClient, private cookieService: CookieService){
-        this._sessionId = cookieService.get("sessionId");
-        
-    }
-
-    public set sessionId(value: string) {
-        this._sessionId = value;
-        console.log(this._sessionId); 
-        this.cookieService.set("sessionId", value);
-      }
+    // private _companyURL = 'http://localhost:8080/CouponProject/rest/admin/createCompany'; //json
+    private _baseURL = 'http://localhost:8080/CouponProject/rest/admin/createCompany'; 
     
-    addCompany(company:company):Observable<company> 
+    constructor(private http:HttpClient, private cookieService: CookieService){
+        this._sessionId = cookieService.get("sessionId");   
+    }
+   
+    addCompany(name,pass,email):Observable<any> 
     { 
-        let myHeader = new Headers();
-        myHeader.append('SET-COOKIE', 'JSESSIONID=<_sessionId>');
-        return this.http.post<company>(this._companyURL,company).pipe(
+
+        let params = new HttpParams({
+            fromObject: {
+                name: name,
+                pass: pass,
+                email : email,
+            }
+          });
+
+
+        return this.http.get<any>(this._baseURL,{params}).pipe(  
             catchError(
                 (error:HttpErrorResponse)=>{
                     console.log(error)
-                    return throwError("Error in the http getProducts")
+                    return throwError("Error to create company, please try agian")
                 }
             )
         )

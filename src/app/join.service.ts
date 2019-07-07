@@ -4,7 +4,7 @@ import { of, Subject, BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class JoinService {
+export class JoinService{
 
   constructor() { }
   

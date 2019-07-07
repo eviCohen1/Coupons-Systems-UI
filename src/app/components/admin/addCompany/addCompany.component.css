@@ -46,6 +46,12 @@ nav ul li a:hover{
 
     }
 
+.loader { 
+  font-size: 40px;
+  color: #595968;
+  font-family: "Times New Roman", Times, serif; 
+    }
+
 /*Form CSS */ 
 
 /* Style inputs with type="text", select elements and textareas */
@@ -93,7 +99,8 @@ input[type=text], select, textarea {
   
   /* When moving the mouse over the submit button, add a darker green color */
   input[type=submit]:hover {
-    background-color:#FFC312;
+    color: black;
+    background-color: white;
   }
   
   /* Add a background color and some padding around the form */
@@ -102,3 +109,4 @@ input[type=text], select, textarea {
     background-color: #f2f2f2;
     padding: 20px;
   }
+

@@ -102,3 +102,9 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+.loader { 
+  font-size: 40px;
+  color: #595968;
+  font-family: "Times New Roman", Times, serif; 
+    }

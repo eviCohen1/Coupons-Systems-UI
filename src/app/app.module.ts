@@ -40,6 +40,7 @@ import { AddCompanyService } from './components/admin/addCompany/addCompany.serv
 import { UpdateCouponComponent } from './components/company/updateCoupon/updateCoupon.component';
 import { CouponListComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-list.component';
 import { AuthenticationService } from './components/log-in/AuthenticationService.service';
+import { UpdateCompanyService } from './components/admin/updateCompany/updateCompant.service';
 
 
 
@@ -86,7 +87,8 @@ import { AuthenticationService } from './components/log-in/AuthenticationService
               CustomersService,
               CompaniesService,
               AddCompanyService,
-              AuthenticationService],
+              AuthenticationService,
+              UpdateCompanyService],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }

@@ -28,6 +28,7 @@ export class CompaniesComponent implements OnInit {
         this.obsSubscriptionCoupons = this.srvProduct.getCompanies().subscribe(
             (data) => {this.company=data});
             (err:any) => console.log(err)
+
     }
     ngDoCheck():void { 
     } 

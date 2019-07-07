@@ -16,20 +16,21 @@
   </nav>      
 </header> 
 <div class="container">
-  <form action="action_page.php">
-
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <label for="fname">Company Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your comapny name..">
+    <input type="text" id="name" name="name" placeholder="Your comapny name.." ngModel required>
 
     <label for="lname">Password </label>
-    <input type="password" id="lname" name="lastname" placeholder="Insert Password">
+    <input type="password" id="password" name="password" placeholder="Insert Password" ngModel required>
 
     <label for="lname">Email </label>
-    <input type="email" id="lname" name="lastname" placeholder="Insert your email">
+    <input type="email" id="email" name="email" placeholder="Insert your email" ngModel required >
 
     <label for="lname">Update Company</label>
     <br>
     <input type="submit" value="Submit">
 
   </form>
+  <div><br></div>
+  <div class="loader" *ngIf="loading">please, wait a second...</div>
 </div>
