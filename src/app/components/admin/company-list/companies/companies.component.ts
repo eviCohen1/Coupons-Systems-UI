@@ -30,15 +30,8 @@ export class CompaniesComponent implements OnInit {
 
     ngOnInit(): void {
       this.loading = true;
-        this.obsSubscriptionCoupons = this.srvProduct.getCompanies().subscribe(
-            (data) => {
-              this.company=data
-              this.loading = false;
-            });
-            (err:any) => {
-              this.loading = false;
-              console.log(err)
-            } 
+      this.getCompanyTable(); 
+ 
     }
     ngDoCheck():void { 
     } 
@@ -52,13 +45,13 @@ export class CompaniesComponent implements OnInit {
         (data) => {  
             alert(data);  
             this.loading = false;
-            this._router.navigate(["./companyList"]);
+            this.getCompanyTable(); 
         },
         (err:any) => {
             this.response = null;
             alert(err);
             this.loading = false;
-            this._router.navigate(["./companyList"]);
+            this.getCompanyTable(); 
             
         })
   
@@ -67,6 +60,20 @@ export class CompaniesComponent implements OnInit {
      toggleImage() { 
 
         this.showImage=!this.showImage;
+
+    }
+
+    getCompanyTable() { 
+      this.obsSubscriptionCoupons = this.srvProduct.getCompanies().subscribe(
+        (data) => {
+          this.company=data
+          this.loading = false;
+        });
+        (err:any) => {
+          this.loading = false;
+          console.log(err)
+        } 
+
 
     }
     ngDestroy() { 

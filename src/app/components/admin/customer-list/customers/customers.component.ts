@@ -29,15 +29,7 @@ export class CustomersComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
-      this.obsSubscriptionCoupons = this.srvProduct.getCustomers().subscribe(
-          (data) => {
-            this.customer=data
-            this.loading = false;
-          });
-          (err:any) => {
-            this.loading = false;
-            console.log(err)
-          }
+    this.getCustomerTable(); 
 
 
   }
@@ -61,7 +53,7 @@ export class CustomersComponent implements OnInit {
          this.response = data;
           alert(this.response);  
           this.loading = false;
-          this._router.navigate(["./customerList"]);
+          this.getCustomerTable(); 
 
       },
       (err:any) => {
@@ -69,7 +61,7 @@ export class CustomersComponent implements OnInit {
           this.response = null;
           alert(err);
           this.loading = false;
-          this._router.navigate(["./customerList"]);
+          this.getCustomerTable(); 
           
       })
 
@@ -79,4 +71,17 @@ export class CustomersComponent implements OnInit {
       this.obsSubscription.unsubscribe;
       this.obsSubscriptionCoupons.unsubscribe;
   } 
+
+  getCustomerTable() { 
+    this.obsSubscriptionCoupons = this.srvProduct.getCustomers().subscribe(
+      (data) => {
+        this.customer=data
+        this.loading = false;
+      });
+      (err:any) => {
+        this.loading = false;
+        console.log(err)
+      }
+
+  }
 }
