@@ -14,7 +14,7 @@ import { CouponFilterPipe } from './components/company/Coupons/coupon-filter.pip
 import { CouponService } from './components/company/Coupons/coupon.service';
 import { CouponDetailComponent } from './components/company/Coupons/coupon-detail.component';
 import { couponListComponent } from './components/company/Coupons/coupon-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { AddCouponComponent } from './components/company/add-coupon/add-coupon.component';
@@ -41,6 +41,7 @@ import { UpdateCouponComponent } from './components/company/updateCoupon/updateC
 import { CouponListComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-list.component';
 import { AuthenticationService } from './components/log-in/AuthenticationService.service';
 import { UpdateCompanyService } from './components/admin/updateCompany/updateCompant.service';
+import { TokenInterceptor } from './httpInterceptor';
 
 
 
@@ -88,7 +89,12 @@ import { UpdateCompanyService } from './components/admin/updateCompany/updateCom
               CompaniesService,
               AddCompanyService,
               AuthenticationService,
-              UpdateCompanyService],
+              UpdateCompanyService,{
+                provide: HTTP_INTERCEPTORS,
+                useClass: TokenInterceptor,
+                multi: true,
+              }
+              ],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }

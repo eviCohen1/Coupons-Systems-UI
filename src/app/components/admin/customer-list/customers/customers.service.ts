@@ -10,6 +10,7 @@ export class CustomersService {
    
     // private _customersURL = './assets/api/customers.json'; //json
     private _customersURL = 'http://localhost:8080/CouponProject/rest/admin/getAllCustomers'; 
+    private _deleteCustURL = 'http://localhost:8080/CouponProject/rest/admin/removeCustomer';
     constructor(private http:HttpClient){
         
     }
@@ -24,6 +25,23 @@ export class CustomersService {
             )
         )
     }
+
+    deleteCustomer(customer):Observable<any>  { 
+
+        console.log(customer); 
+
+        return this.http.post<any>(this._deleteCustURL,customer).pipe(  
+            catchError(
+                (error:HttpErrorResponse)=>{
+                    console.log(error)
+                    return throwError("Error to delete customer " + customer.CustomerName + " , please try agian")
+                }
+ 
+            )
+        )
+
+    }
+
  
    
     }

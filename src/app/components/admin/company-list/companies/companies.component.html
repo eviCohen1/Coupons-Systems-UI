@@ -17,6 +17,7 @@
                       <th>Company Name</th>
                       <th>Password</th>
                       <th>Email</th>
+                      <th></th>
                   </tr>
               </thead>
               <tbody>
@@ -26,7 +27,7 @@
                       <th>{{company.compName}} </th>
                       <th>{{company.password}} </th>
                       <th>{{company.email}}</th> 
-
+                      <th><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCompany(company)'> Remove</button></th> 
                   </tr>
               </tbody>
           </table>
@@ -35,7 +36,9 @@
       </div>
       
   </div>
-  <ng-template #falsyTemplate>
+  <!-- <ng-template #falsyTemplate>
       <h3>No Recordes were found!!</h3>
-  </ng-template>
+  </ng-template> -->
+  <div><br></div>
+    <div class="loader" *ngIf="loading">please, wait a second...</div>
 </div>

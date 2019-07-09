@@ -12,7 +12,7 @@ export class UpdateCompanyService {
     constructor(private http:HttpClient) {} 
 
     updateCompany(company):Observable<any> { 
-     return this.http.post<any>(this._updateCompanyURL,{company}).pipe(  
+     return this.http.post<any>(this._updateCompanyURL,company).pipe(  
           catchError(
               (error:HttpErrorResponse)=>{
                   console.log(error)

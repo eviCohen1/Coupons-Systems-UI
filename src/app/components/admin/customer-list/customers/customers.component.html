@@ -16,13 +16,15 @@
                       <th>Id</th>
                       <th>Customer Name</th>
                       <th>Password</th>
+                      <th></th>
                   </tr>
               </thead>
               <tbody>
                   <tr *ngFor='let customer of customer  | customerFilter:listFilter' >
-                      <td>{{customer.id }}</td>
+                      <th>{{customer.id }}</th>
                       <td>{{customer.CustomerName}}</td>
                       <td>{{customer.password}}</td>
+                      <th><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCustomer(customer)'> Remove</button></th> 
 
 
                   </tr>
@@ -33,7 +35,9 @@
       </div>
       
   </div>
-  <ng-template #falsyTemplate>
+  <!-- <ng-template #falsyTemplate>
       <h3>No Recordes were found!!</h3>
-  </ng-template>
+  </ng-template> -->
+  <div><br></div>
+    <div class="loader" *ngIf="loading">please, wait a second...</div>
 </div>

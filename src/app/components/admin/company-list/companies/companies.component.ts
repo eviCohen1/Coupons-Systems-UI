@@ -3,6 +3,7 @@ import { CouponService } from 'src/app/components/company/Coupons/coupon.service
 import { Subscription } from 'rxjs';
 import { company } from 'src/app/Interfaces/Icompany';
 import { CompaniesService } from './companies.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-companies',
@@ -20,18 +21,48 @@ export class CompaniesComponent implements OnInit {
     company:company[];
     obsSubscription:Subscription;
     obsSubscriptionCoupons:Subscription
+    response:String;
+    loading: boolean;
+   
 
-    constructor(private srvProduct:CompaniesService) {   
+    constructor(private srvProduct:CompaniesService,private _router: Router) {   
     }
 
     ngOnInit(): void {
+      this.loading = true;
         this.obsSubscriptionCoupons = this.srvProduct.getCompanies().subscribe(
-            (data) => {this.company=data});
-            (err:any) => console.log(err)
-
+            (data) => {
+              this.company=data
+              this.loading = false;
+            });
+            (err:any) => {
+              this.loading = false;
+              console.log(err)
+            } 
     }
     ngDoCheck():void { 
     } 
+    deleteCompany(companyDelete) { 
+
+      this.company = companyDelete; 
+      this.loading = true;
+
+      this.obsSubscription = this.srvProduct.deleteCompany(this.company)
+      .subscribe(
+        (data) => {  
+            alert(data);  
+            this.loading = false;
+            this._router.navigate(["./companyList"]);
+        },
+        (err:any) => {
+            this.response = null;
+            alert(err);
+            this.loading = false;
+            this._router.navigate(["./companyList"]);
+            
+        })
+  
+      }
 
      toggleImage() { 
 
@@ -42,4 +73,6 @@ export class CompaniesComponent implements OnInit {
         this.obsSubscription.unsubscribe;
         this.obsSubscriptionCoupons.unsubscribe;
     } 
+
+
   }

@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { company } from 'src/app/Interfaces/Icompany';
 import { UpdateCompanyService } from './updateCompant.service';
 import { CompanyComponent } from '../../company/company.component';
+import { Router } from '@angular/router';
 
 @Component( { 
     selector:"app-updateCompany", 
@@ -19,7 +20,7 @@ export class UpdateCompanyComponent implements OnInit {
     company: company; 
     loading:boolean; 
 
-    constructor(private srvUpdateCompany: UpdateCompanyService) {} 
+    constructor(private srvUpdateCompany: UpdateCompanyService,private _router: Router) {} 
 
     ngOnInit () : void { 
         
@@ -32,6 +33,7 @@ export class UpdateCompanyComponent implements OnInit {
         this.company.password = this.Form.value.password; 
         this.company.email = this.Form.value.email; 
         this.loading = true; 
+        console.log(this.company);
        
         this.obsSubscription = this.srvUpdateCompany.updateCompany(this.company)
         .subscribe( 
@@ -39,11 +41,13 @@ export class UpdateCompanyComponent implements OnInit {
                 this.response = data;
                 alert(this.response); 
                 this.loading = false;
+                this._router.navigate(["./companyList"]);
             },
             (err:any) => {
                 this.response = null;
                 alert(err);
                 this.loading = false;
+                this._router.navigate(["./updateCompany"]);
             }
         ); 
     } 

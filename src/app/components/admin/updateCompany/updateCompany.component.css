@@ -104,7 +104,7 @@ input[type=submit]:hover {
 }
 
 .loader { 
-  font-size: 40px;
+  font-size: 25px;
   color: #595968;
   font-family: "Times New Roman", Times, serif; 
     }

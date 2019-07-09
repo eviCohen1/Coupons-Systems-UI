@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { AddCompanyService } from './addCompany.service';
 import { Subscription } from 'rxjs';
 import { NgForm } from "@angular/forms";
+import { Router } from '@angular/router';
 
 @Component( { 
     selector:"app-addCompany", 
@@ -21,7 +22,7 @@ export class AddCompanyComponent implements OnInit {
 
 
 
-    constructor (private srvAddCompany: AddCompanyService) { }
+    constructor (private srvAddCompany: AddCompanyService, private _router: Router) { }
     ngOnInit () : void { 
     
     }
@@ -41,11 +42,13 @@ export class AddCompanyComponent implements OnInit {
                 this.response = data;
                 alert(this.response); 
                 this.loading = false;
+                this._router.navigate(["./companyList"]);
             },
             (err:any) => {
                 this.response = null;
                 alert(err);
                 this.loading = false;
+                this._router.navigate(["./addCompany"]);
             }
         ); 
         

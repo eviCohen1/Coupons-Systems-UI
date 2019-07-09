@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { customer } from 'src/app/Interfaces/Icustomer';
 import { CustomersService } from './customers.service';
+import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customers',
@@ -17,15 +19,26 @@ export class CustomersComponent implements OnInit {
   listFilter:string ='';
   customer : customer[]; 
   obsSubscription:Subscription;
-  obsSubscriptionCoupons:Subscription; 
+  obsSubscriptionCoupons:Subscription;
+  response:String;
+  loading: boolean; 
   
-  constructor(private srvProduct:CustomersService) {   
+  constructor(private srvProduct:CustomersService, private _router:Router ) {   
   }
 
   ngOnInit(): void {
+    this.loading = true;
       this.obsSubscriptionCoupons = this.srvProduct.getCustomers().subscribe(
-          (data) => {this.customer=data});
-          (err:any) => console.log(err)
+          (data) => {
+            this.customer=data
+            this.loading = false;
+          });
+          (err:any) => {
+            this.loading = false;
+            console.log(err)
+          }
+
+
   }
   ngDoCheck():void { 
   } 
@@ -33,6 +46,29 @@ export class CustomersComponent implements OnInit {
    toggleImage() { 
 
       this.showImage=!this.showImage;
+
+  }
+  deleteCustomer(customer){ 
+    this.customer = customer; 
+    this.loading = true ; 
+
+    console.log(this.customer); 
+
+    this.obsSubscription = this.srvProduct.deleteCustomer(this.customer)
+    .subscribe(
+      (data) => {  
+          alert(data);  
+          this.loading = false;
+          this._router.navigate(["./companyList"]);
+      },
+      (err:any) => {
+          this.response = null;
+          alert(err);
+          this.loading = false;
+          this._router.navigate(["./companyList"]);
+          
+      })
+
 
   }
   ngDestroy() { 
