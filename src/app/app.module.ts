@@ -42,6 +42,8 @@ import { CouponListComponentCustomer } from './components/customer/coupon-list/C
 import { AuthenticationService } from './components/log-in/AuthenticationService.service';
 import { UpdateCompanyService } from './components/admin/updateCompany/updateCompant.service';
 import { TokenInterceptor } from './httpInterceptor';
+import { AddCustomerService } from './components/admin/addCustomer/addCustomer.service';
+import { UpdateCustomerService } from './components/admin/updateCustomer/updateCustomer.service';
 
 
 
@@ -93,7 +95,9 @@ import { TokenInterceptor } from './httpInterceptor';
                 provide: HTTP_INTERCEPTORS,
                 useClass: TokenInterceptor,
                 multi: true,
-              }
+              }, 
+              AddCustomerService,
+              UpdateCustomerService
               ],
   bootstrap: [LayoutComponent]
 })

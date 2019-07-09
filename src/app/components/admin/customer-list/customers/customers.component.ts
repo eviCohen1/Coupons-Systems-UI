@@ -5,6 +5,7 @@ import { CustomersService } from './customers.service';
 import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
@@ -57,15 +58,18 @@ export class CustomersComponent implements OnInit {
     this.obsSubscription = this.srvProduct.deleteCustomer(this.customer)
     .subscribe(
       (data) => {  
-          alert(data);  
+         this.response = data;
+          alert(this.response);  
           this.loading = false;
-          this._router.navigate(["./companyList"]);
+          this._router.navigate(["./customerList"]);
+
       },
       (err:any) => {
+
           this.response = null;
           alert(err);
           this.loading = false;
-          this._router.navigate(["./companyList"]);
+          this._router.navigate(["./customerList"]);
           
       })
 

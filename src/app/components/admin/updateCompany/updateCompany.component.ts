@@ -33,8 +33,7 @@ export class UpdateCompanyComponent implements OnInit {
         this.company.password = this.Form.value.password; 
         this.company.email = this.Form.value.email; 
         this.loading = true; 
-        console.log(this.company);
-       
+    
         this.obsSubscription = this.srvUpdateCompany.updateCompany(this.company)
         .subscribe( 
             (data) => { 

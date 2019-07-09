@@ -19,17 +19,20 @@
   </nav>      
 </header> 
 <div class="container">
-  <form action="action_page.php">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
 
     <label for="fname">Customer Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your comapny name..">
+    <input type="text" id="name" name="name" placeholder="Your comapny name.." ngModel required>
 
     <label for="lname">Password </label>
-    <input type="password" id="lname" name="lastname" placeholder="Insert Password">
+    <input type="password" id="password" name="password" placeholder="Insert Password" ngModel required>
 
     <label for="lname">Update Customer</label>
     <br>
-    <input type="submit" value="Submit">
-
+    <input type="submit" value="Submit" class="btn float-left login_btn">
+  
   </form>
+  <div><br></div>
+  <div class="loader" *ngIf="loading">please, wait a second...</div>
 </div>
