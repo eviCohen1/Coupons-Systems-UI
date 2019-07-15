@@ -1,18 +1,18 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'
+import { Component, OnInit} from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { CouponService } from './coupon.service';
 import { Icoupons } from 'src/app/Interfaces/Icoupons';
+import { CouponServiceCustomer } from './coupon.service';
 
 @Component({
     templateUrl: './coupon-detail.component.html'
 })
-export class CouponDetailComponent implements OnInit { 
+export class CouponDetailComponentCustomer implements OnInit { 
  pageTitle: string = 'Coupon Detail';
  coupons:Icoupons[];
  coupon:Icoupons
   
- constructor(private _router:Router,private route:ActivatedRoute,private srvCoupon:CouponService){
+ constructor(private _router:Router,private route:ActivatedRoute,private srvCoupon:CouponServiceCustomer){
  }
 ngOnInit(){
     let id= +this.route.snapshot.paramMap.get('id')
@@ -22,10 +22,8 @@ ngOnInit(){
     )
     
 }
-onRatingClicked(message: string): void {
-    this.pageTitle = 'Coupon Detail: ' + message;
- }
+
  onBack() {
-    this._router.navigate(['/company']);
+    this._router.navigate(['/puschasedCoupon']);
 }
 }

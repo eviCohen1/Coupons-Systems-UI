@@ -46,11 +46,14 @@ nav ul li a:hover{
 
     }
 
-.loader { 
-  font-size: 25px;
-  color: #595968;
-  font-family: "Times New Roman", Times, serif; 
-    }
+    .loader { 
+      font-size: 25px;
+      color: #595968;
+      padding-bottom: 15px;
+      /* padding-left: 100px;  */
+      text-align: center;
+      font-family: "Times New Roman", Times, serif; 
+        }
 
 /*Form CSS */ 
 

@@ -36,7 +36,7 @@ import { CompaniesService } from './components/admin/company-list/companies/comp
 import { CompanyFilterPipe } from './components/admin/company-list/companies/companies-filter.pipe';
 import { AddCompanyService } from './components/admin/addCompany/addCompany.service';
 import { UpdateCouponComponent } from './components/company/updateCoupon/updateCoupon.component';
-import { CouponListComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-list.component';
+import {  CouponList } from './components/customer/coupon-list/Coupons/coupon-list.component';
 import { AuthenticationService } from './components/log-in/AuthenticationService.service';
 import { UpdateCompanyService } from './components/admin/updateCompany/updateCompant.service';
 import { TokenInterceptor } from './httpInterceptor';
@@ -44,6 +44,10 @@ import { AddCustomerService } from './components/admin/addCustomer/addCustomer.s
 import { UpdateCustomerService } from './components/admin/updateCustomer/updateCustomer.service';
 import { AddCouponService } from './components/company/add-coupon/add-coupon.service';
 import { UpdateCouponService } from './components/company/updateCoupon/updateCoupon.service';
+import { PurchaseCouponService } from './components/customer/purchase-coupon/purchase-coupon.service';
+import { CouponListComponentCustomer } from './components/customer/coupon-list/coupon-list.component';
+import { CouponServiceCustomer } from './components/customer/coupon-list/Coupons/coupon.service';
+import { CouponDetailComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-detail.component';
 
 
 
@@ -76,7 +80,9 @@ import { UpdateCouponService } from './components/company/updateCoupon/updateCou
       CompanyFilterPipe,
       UpdateCouponComponent,
       CouponListComponentCustomer,
-      couponListComponent
+      couponListComponent,
+      CouponList,
+      CouponDetailComponentCustomer
        
         ],
   imports: [BrowserModule,
@@ -99,7 +105,9 @@ import { UpdateCouponService } from './components/company/updateCoupon/updateCou
               AddCustomerService,
               UpdateCustomerService, 
               AddCouponService,
-              UpdateCouponService
+              UpdateCouponService,
+              PurchaseCouponService,
+              CouponServiceCustomer
               ],
   bootstrap: [LayoutComponent]
 })

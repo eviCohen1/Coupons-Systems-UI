@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { CouponListComponentCustomer } from './Coupons/coupon-list.component';
+import { CouponListComponentCustomer } from './coupon-list.component';
+
 
 describe('CouponListComponent', () => {
   let component: CouponListComponentCustomer;

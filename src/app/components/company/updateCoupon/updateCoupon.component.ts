@@ -24,7 +24,7 @@ export class UpdateCouponComponent implements OnInit {
 
   ngOnInit() {
 
-    this.companyTitle = "mPrest"; 
+    this.companyTitle =sessionStorage.getItem("userName");   
   }
 
   onSubmit() { 

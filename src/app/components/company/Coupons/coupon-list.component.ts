@@ -16,7 +16,7 @@ import { Icoupons } from 'src/app/Interfaces/Icoupons';
 
 export class couponListComponent implements OnInit, DoCheck {
 
-    pageTitle:string = " Coupon List ";
+    pageTitle:string = sessionStorage.getItem("userName");  
     imageWidth:number = 40;
     imageMargin:number = 2 ; 
     showImage:Boolean = false;

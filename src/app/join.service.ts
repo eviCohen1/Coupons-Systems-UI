@@ -6,8 +6,7 @@ import { of, Subject, BehaviorSubject } from 'rxjs';
 })
 export class JoinService{
 
-  constructor() { }
-  
+  constructor() { } 
   subject = new BehaviorSubject([false, false, false, false]);
 
 }

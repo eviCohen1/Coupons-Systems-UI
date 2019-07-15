@@ -18,8 +18,10 @@ import { AddCustomerComponent } from './components/admin/addCustomer/addCustomer
 import { UpdateCompanyComponent } from './components/admin/updateCompany/updateCompany.component';
 import { UpdateCustomerComponent } from './components/admin/updateCustomer/updateCustomer.component';
 import { UpdateCouponComponent } from './components/company/updateCoupon/updateCoupon.component';
-import { CouponListComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-list.component';
+
 import { CustomersComponent } from './components/admin/customer-list/customers/customers.component';
+import { CouponListComponentCustomer } from './components/customer/coupon-list/coupon-list.component';
+import { CouponDetailComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-detail.component';
 
 const routes: Routes = [
   {path: '' , component:LogInComponent},
@@ -35,13 +37,15 @@ const routes: Routes = [
   {path : "companyCoupons", component: CompanyComponent},
   {path : "couponList", component:couponListComponent}, 
   {path : "puschaseCoupon", component:PurchaseCouponComponent}, 
-  {path : "puschasedCoupon", component:PurchasedCouponComponent}, 
+  {path : "puschasedCoupon", component:CouponListComponentCustomer}, 
   {path : 'LogIn' ,component:LogInComponent}, 
   {path : "addCompany", component:AddCompanyComponent}, 
   {path : "addCustomer", component:AddCustomerComponent}, 
   {path : "updateCompany", component:UpdateCompanyComponent}, 
   {path : "updateCustomer", component : UpdateCustomerComponent},
-  {path : "updateCompanyCoupon", component:UpdateCouponComponent}
+  {path : "updateCompanyCoupon", component:UpdateCouponComponent},
+  {path: 'couponCust/:id',component:CouponDetailComponentCustomer}
+  
   
   
   

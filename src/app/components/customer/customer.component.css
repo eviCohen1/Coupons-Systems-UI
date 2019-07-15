@@ -19,7 +19,8 @@
 }
 table > tbody > tr > td { 
   padding: 35px;
-  position: center 
+  position: center;
+  background-color:#f2f2f2;
 }
 
 element{

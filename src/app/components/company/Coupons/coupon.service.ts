@@ -15,7 +15,7 @@ export class CouponService {
     private _couponsURL = 'http://localhost:8080/CouponProject/rest/company/getAllCompanyCoupons'; 
     private _deleteCouponURL = 'http://localhost:8080/CouponProject/rest/company/removeCoupon';
     constructor(private http:HttpClient, private cookieService: CookieService){
-        this._sessionId = cookieService.get("sessionId");
+        // this._sessionId = cookieService.get("sessionId");
         
     }
     

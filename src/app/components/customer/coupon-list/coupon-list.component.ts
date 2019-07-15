@@ -13,7 +13,7 @@ export class CouponListComponentCustomer implements OnInit {
 
   ngOnInit() {
 
-    this.customerTitle = "Evi Cohen"
+    this.customerTitle = sessionStorage.getItem("userName");  
   }
 
 }

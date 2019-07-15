@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit, DoCheck } from '@angular/core';
-import { CouponService } from "./coupon.service";
+import { CouponServiceCustomer } from "./coupon.service";
 import { Subscription } from 'rxjs';
 import { Icoupons } from 'src/app/Interfaces/Icoupons';
 
@@ -9,12 +9,12 @@ import { Icoupons } from 'src/app/Interfaces/Icoupons';
   templateUrl: "./coupon-list.component.html",
   styleUrls: ['./coupon-list.component.css'],
   encapsulation : ViewEncapsulation.None,
-  providers:[CouponService]
+  providers:[CouponServiceCustomer]
   
   
 })
 
-export class CouponListComponentCustomer implements OnInit, DoCheck {
+export class CouponList implements OnInit, DoCheck {
 
     pageTitle:string = " Coupon List ";
     imageWidth:number = 40;
@@ -24,14 +24,25 @@ export class CouponListComponentCustomer implements OnInit, DoCheck {
     coupons:Icoupons[];
     obsSubscription:Subscription;
     obsSubscriptionCoupons:Subscription
+    response:String;
+    loading: boolean;
+    coupon : Icoupons;
 
-    constructor(private srvProduct:CouponService) {   
+    constructor(private srvProduct:CouponServiceCustomer) {   
     }
 
     ngOnInit(): void {
-        this.obsSubscriptionCoupons = this.srvProduct.getCoupons().subscribe(
-            (data) => {this.coupons=data});
-            (err:any) => console.log(err)
+
+        this.loading = true ;
+       this.obsSubscriptionCoupons = this.srvProduct.getCoupons().subscribe(
+            (data) => {
+              this.coupons=data
+              this.loading = false;
+            });
+            (err:any) => {
+              this.loading = false;
+              console.log(err)
+            }
     }
     ngDoCheck():void { 
     } 
@@ -41,6 +52,7 @@ export class CouponListComponentCustomer implements OnInit, DoCheck {
         this.showImage=!this.showImage;
 
     }
+    
     deleteCoupon(title) { 
 
         window.alert("delete coupon " + title); 

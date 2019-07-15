@@ -26,8 +26,8 @@
                         <th>Coupon Type </th>
                         <th>Message </th>
                         <th>Price </th>
-                        <th>Available</th> 
-                        <th></th>
+                        <!-- <th>Available</th>  -->
+
                     </tr>
                 </thead>
                 <tbody>
@@ -37,16 +37,16 @@
                             [style.width.px]='imageWidth' [style.margin.px]='imageMargin' *ngIf = 'showImage'
                              ></td>
                         
-                        <td><a [routerLink] = " ['/coupon',coupon.id]">{{coupon.title| uppercase}}</a></td>
+                        <td><a [routerLink] = " ['/couponCust',coupon.id]">{{coupon.title| uppercase}}</a></td>
                         <td>{{coupon.id}} </td>
-                        <td>{{coupon.startDate }}</td>
+                        <td>{{coupon.startDate}}</td>
                         <td>{{coupon.endDate}}</td>
                         <td>{{coupon.amount}}</td>
-                        <th>{{coupon.CouponType|uppercase}} </th>
-                        <th>{{coupon.message|uppercase}} </th>
+                        <th>{{coupon.type}} </th>
+                        <th>{{coupon.message}} </th> 
                         <th>{{coupon.price|currency}} </th>
-                        <th>{{coupon.active}}</th> 
-                        <td><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCoupon(coupon.title)'> Remove</button></td> 
+                        <!-- <th>{{coupon.active}}</th>  -->
+                       
                     </tr>
                 </tbody>
             </table>

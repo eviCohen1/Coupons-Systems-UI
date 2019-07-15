@@ -13,7 +13,7 @@ public customerTitle: string;
 
   ngOnInit() {
 
-    this.customerTitle = "Evi Cohen"; 
+    this.customerTitle = sessionStorage.getItem("userName"); 
     
   }
 

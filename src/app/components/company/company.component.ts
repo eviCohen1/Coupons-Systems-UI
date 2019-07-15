@@ -13,7 +13,7 @@ export class CompanyComponent implements OnInit {
 
   ngOnInit() {
 
-    this.companyTitle = "mPrest"; 
+    this.companyTitle =sessionStorage.getItem("userName");  
   }
 
 }

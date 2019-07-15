@@ -16,9 +16,7 @@ export class LogInComponent implements OnInit {
   title = "logIn";
   @ViewChild("f") signupForm: NgForm;
 
-  username = "evic";
-  password = "221284";
-  client = "Admin";
+
 
   public result: setCookie;
 
@@ -26,6 +24,7 @@ export class LogInComponent implements OnInit {
   isAdminLoggedIn: boolean;
   isCustomerLoggedIn: boolean;
   isUserLoggedIn: boolean;
+  userName : String ; 
   join = [];
   obsSubscription: Subscription;
   error: any;
@@ -44,6 +43,7 @@ export class LogInComponent implements OnInit {
     this.isAdminLoggedIn = false;
     this.isCompanyLoggedIn = false;
     this.isCustomerLoggedIn = false;
+
   }
 
   onSubmit() {
@@ -68,6 +68,7 @@ export class LogInComponent implements OnInit {
           case "Admin": {
             this.isAdminLoggedIn = true;
             this.isUserLoggedIn = true;
+            sessionStorage.setItem('userName',this.user.userName as string)
             this.join = [
               this.isUserLoggedIn,
               this.isAdminLoggedIn,
@@ -82,6 +83,7 @@ export class LogInComponent implements OnInit {
           case "Company": {
             this.isCompanyLoggedIn = true;
             this.isUserLoggedIn = true;
+            sessionStorage.setItem('userName',this.user.userName as string);
             this.join = [
               this.isUserLoggedIn,
               this.isAdminLoggedIn,
@@ -97,6 +99,7 @@ export class LogInComponent implements OnInit {
           case "Customer": {
             this.isCustomerLoggedIn = true;
             this.isUserLoggedIn = true;
+            sessionStorage.setItem('userName',this.user.userName as string);
             this.join = [
               this.isUserLoggedIn,
               this.isAdminLoggedIn,
