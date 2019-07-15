@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UpdateCouponComponent  } from './updateCoupon.component';
 
-describe('AddCouponComponent', () => {
+describe('UpdateCouponComponent', () => {
   let component: UpdateCouponComponent ;
   let fixture: ComponentFixture<UpdateCouponComponent >;
 

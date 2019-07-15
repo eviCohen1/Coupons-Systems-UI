@@ -25,7 +25,7 @@ export class CompaniesComponent implements OnInit {
     loading: boolean;
    
 
-    constructor(private srvProduct:CompaniesService,private _router: Router) {   
+    constructor(private srvProduct:CompaniesService) {   
     }
 
     ngOnInit(): void {

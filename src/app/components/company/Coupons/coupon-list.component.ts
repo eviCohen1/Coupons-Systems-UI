@@ -24,14 +24,30 @@ export class couponListComponent implements OnInit, DoCheck {
     coupons:Icoupons[];
     obsSubscription:Subscription;
     obsSubscriptionCoupons:Subscription
+    response:String;
+    loading: boolean;
+    coupon : Icoupons;
 
     constructor(private srvProduct:CouponService) {   
     }
 
     ngOnInit(): void {
+
+        this.loading = true ;
+        this.getCompanyCoupons();  
+
+    }
+
+    getCompanyCoupons() { 
         this.obsSubscriptionCoupons = this.srvProduct.getCoupons().subscribe(
-            (data) => {this.coupons=data});
-            (err:any) => console.log(err)
+            (data) => {
+              this.coupons=data
+              this.loading = false;
+            });
+            (err:any) => {
+              this.loading = false;
+              console.log(err)
+            }
     }
     ngDoCheck():void { 
     } 
@@ -41,9 +57,27 @@ export class couponListComponent implements OnInit, DoCheck {
         this.showImage=!this.showImage;
 
     }
-    deleteCoupon(title) { 
+    deleteCoupon(couponDelete) { 
+        this.coupon = <Icoupons>{}; 
+        this.coupon.id = couponDelete.id ; 
+        
+        this.loading = true;
 
-        window.alert("delete coupon " + title); 
+        this.obsSubscription = this.srvProduct.deleteCoupon(this.coupon)
+        .subscribe(
+          (data) => {  
+              alert(data);  
+              this.loading = false;
+              this.getCompanyCoupons(); 
+          },
+          (err:any) => {
+              this.response = null;
+              alert(err);
+              this.loading = false;
+              this.getCompanyCoupons();  
+              
+          })
+    
     }
     ngDestroy() { 
         this.obsSubscription.unsubscribe;

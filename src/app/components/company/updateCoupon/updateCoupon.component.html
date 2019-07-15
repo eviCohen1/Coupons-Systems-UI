@@ -16,44 +16,46 @@
 
   </nav>      
 </header> 
-  <div class="container">
-    <form action="action_page.php">
-  
-      <label for="fname">Coupon name</label>
-      <input type="text" id="title" name="title" placeholder="Insert Coupon Name">
-  
-      <label for="lname">Amount </label>
-      <input type="number" id="amount" name="amount" placeholder="Insert Amount">
-      
-      <label for="fname">Type of the Coupon</label>
-      <select id="type" name="type"  palceholder="Insert Coupon Type" required ngModel>
-            <option value="RESTURANTS">RESTURANTS</option>
-            <option value="ELECTRICITY">ELECTRICITY</option>
-            <option value="FOOD">FOOD</option>
-            <option value="HEALTH">HEALTH</option>
-            <option value="SPORTS">SPORTS</option>
-            <option value="CAMPING">CAMPING</option>
-            <option value="TRAVELING">TRAVELING</option>
-      </select> 
-     
-      <label for="lname">Description</label>
-      <input type="text" id="message" name="message" placeholder="Insert Description">
+<div class="container">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+    <label for="fname">Coupon Name</label>
+    <input type="text" id="title" name="title" placeholder="Insert Coupon Name"  ngModel required>
+
+    <label for="lname">Amount </label>
+    <input type="number" id="amount" name="amount" placeholder="Insert Amount" ngModel required>
+    
+    <!-- <label for="fname">Type of the Coupon</label>
+    <select id="type" name="type"  palceholder="Insert Coupon Type" required ngModel>
+          <option value="RESTURANTS">RESTURANTS</option>
+          <option value="ELECTRICITY">ELECTRICITY</option>
+          <option value="FOOD">FOOD</option>
+          <option value="HEALTH">HEALTH</option>
+          <option value="SPORTS">SPORTS</option>
+          <option value="CAMPING">CAMPING</option>
+          <option value="TRAVELING">TRAVELING</option>
+    </select>  -->
    
-      <label for="lname">Coupon Pricing</label>
-      <input type="number" id="price" name="price" placeholder="Insert Coupon Pricing">
+    <!-- <label for="lname">Description</label>
+    <input type="text" maxlength="100" id="message" name="message" placeholder="Insert Description"  ngModel required>
+ 
+    <label for="lname">Coupon Pricing</label>
+    <input type="number" id="price" name="price" placeholder="Insert Coupon Pricing"  ngModel required>
 
-      <label for="lname">Image</label>
-      <input type="text" id="image" name="image" placeholder="Insert Coupon Image URL">
+    <label for="lname">Image</label>
+    <input type="text" id="image" name="image" placeholder="Insert Coupon Image URL"  ngModel required> -->
 
-      <label for="fname">Coupon Available</label>
-      <select id="type" name="type"  palceholder="Insert Coupon Type" required ngModel>
-            <option value="true">Available</option>
-            <option value="false">Not Available</option>
-      </select>
+    <label for="fname">Coupon Available</label>
+    <select id="active" name="active"  palceholder="Insert the status of the coupon" required ngModel>
+          <option value= true >Available</option>
+          <option value= false >Not Available</option>
+    </select>
 
-      <label for="lname">Update Coupon</label>
-      <br>
-      <input type="submit" value="Submit">
-  
-    </form>
+    <label for="lname">Update Coupon</label>
+    <br>
+    <input type="submit" value="Submit" class="btn float-left login_btn">
+
+  </form>
+    <div><br></div>
+    <div class="loader" *ngIf="loading">please, wait a second...</div>
 </div>

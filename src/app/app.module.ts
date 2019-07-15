@@ -20,12 +20,10 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { AddCouponComponent } from './components/company/add-coupon/add-coupon.component';
 import { CompanyListComponent } from './components/admin/company-list/company-list.component';
 import { CustomerListComponent } from './components/admin/customer-list/customer-list.component';
-import { CouponListComponent } from './components/customer/coupon-list/coupon-list.component';
 import { PurchaseCouponComponent } from './components/customer/purchase-coupon/purchase-coupon.component';
 import { PurchasedCouponComponent } from './components/customer/purchased-coupon/purchased-coupon.component';
 import { CompaniesComponent } from './components/admin/company-list/companies/companies.component';
 import { CustomersComponent } from './components/admin/customer-list/customers/customers.component';
-import { RouterModule, ROUTES } from '@angular/router';
 import { JoinService } from './join.service';
 import { CookieService } from 'ngx-cookie-service';
 import { AddCompanyComponent } from './components/admin/addCompany/addCompany.component';
@@ -44,6 +42,8 @@ import { UpdateCompanyService } from './components/admin/updateCompany/updateCom
 import { TokenInterceptor } from './httpInterceptor';
 import { AddCustomerService } from './components/admin/addCustomer/addCustomer.service';
 import { UpdateCustomerService } from './components/admin/updateCustomer/updateCustomer.service';
+import { AddCouponService } from './components/company/add-coupon/add-coupon.service';
+import { UpdateCouponService } from './components/company/updateCoupon/updateCoupon.service';
 
 
 
@@ -64,7 +64,6 @@ import { UpdateCustomerService } from './components/admin/updateCustomer/updateC
       AddCouponComponent,
       CompanyListComponent,
       CustomerListComponent,
-      CouponListComponent,
       PurchaseCouponComponent,
       PurchasedCouponComponent,
       CompaniesComponent,
@@ -76,7 +75,8 @@ import { UpdateCustomerService } from './components/admin/updateCustomer/updateC
       CustomerFilterPipe,
       CompanyFilterPipe,
       UpdateCouponComponent,
-      CouponListComponentCustomer 
+      CouponListComponentCustomer,
+      couponListComponent
        
         ],
   imports: [BrowserModule,
@@ -97,7 +97,9 @@ import { UpdateCustomerService } from './components/admin/updateCustomer/updateC
                 multi: true,
               }, 
               AddCustomerService,
-              UpdateCustomerService
+              UpdateCustomerService, 
+              AddCouponService,
+              UpdateCouponService
               ],
   bootstrap: [LayoutComponent]
 })

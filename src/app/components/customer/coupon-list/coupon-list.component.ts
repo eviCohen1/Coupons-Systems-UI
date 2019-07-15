@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './coupon-list.component.html',
   styleUrls: ['./coupon-list.component.css']
 })
-export class CouponListComponent implements OnInit {
+export class CouponListComponentCustomer implements OnInit {
 
   public customerTitle: string;
 

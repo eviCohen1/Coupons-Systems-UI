@@ -21,10 +21,6 @@ export class AddCustomerService {
 
     addCustomer(name,pass):Observable<any> 
     { 
-        let headers = new Headers({
-            'Content-Type': 'application/json'
-          });
-
         let params = new HttpParams({
             fromObject: {
                 name: name,

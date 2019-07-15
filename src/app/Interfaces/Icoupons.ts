@@ -5,7 +5,7 @@ export interface Icoupons {
     startDate: string,
     endDate: string,
     amount: number,
-    CouponType: string,
+    type: string,
     message: string,
     price:number,
     image: string,

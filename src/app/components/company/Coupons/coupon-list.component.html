@@ -14,11 +14,12 @@
                 <thead class="thead-light" id ="thead">
                     <tr>
                         <th>
-                            <button class='btn btn-warning' style = "color:black" (click) = 'toggleImage()' >
+                            <button class='btn btn-warning' style = "color:black" (click) = 'toggleImage()'>
                                 {{showImage ? 'Hide':'Show'}} Image
                             </button>
                         </th> 
                         <th>Title</th>
+                        <th>ID</th>
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Amount</th>
@@ -37,14 +38,15 @@
                              ></td>
                         
                         <td><a [routerLink] = " ['/coupon',coupon.id]">{{coupon.title| uppercase}}</a></td>
-                        <td>{{coupon.startDate }}</td>
+                        <td>{{coupon.id}}</td>
+                        <td>{{coupon.startDate}}</td>
                         <td>{{coupon.endDate}}</td>
                         <td>{{coupon.amount}}</td>
-                        <th>{{coupon.CouponType|uppercase}} </th>
+                        <th>{{coupon.type}} </th>
                         <th>{{coupon.message|uppercase}} </th>
-                        <th>{{coupon.price|currency}} </th>
+                        <th>{{coupon.price| currency : 'USD': 'symbol': '1.1-2'}} </th>
                         <th>{{coupon.active}}</th> 
-                        <td><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCoupon(coupon.title)'> Remove</button></td> 
+                        <td><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCoupon(coupon)'> Remove</button></td> 
                     </tr>
                 </tbody>
             </table>
@@ -52,7 +54,9 @@
         </div>
         
     </div>
-    <ng-template #falsyTemplate>
+    <!-- <ng-template #falsyTemplate>
         <h3>No Recordes were found!!</h3>
-    </ng-template>
+    </ng-template> -->
+    <div><br></div>
+    <div class="loader" *ngIf="loading">please, wait a second...</div>
 </div>
