@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { timeInterval } from 'rxjs/operators';
 import { Time } from '@angular/common';
+import { WeatherService } from './weather.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,17 +12,31 @@ import { Time } from '@angular/common';
 export class HeaderComponent implements OnInit {
 
   public currentDate: Date;
-  public temp; 
+  public temp : number; 
+  public windSpeed : number;
   public currentTime: Date;
-  constructor() { };
+  obsSubscription:Subscription;
+  constructor(private srvWeather:WeatherService) { };
   @Input() public isUserLoggedIn: boolean 
 
   ngOnInit() {
 
     this.currentDate =new Date(); 
     this.currentTime = new Date(); 
-    this.temp = 25.5;
     this.isUserLoggedIn = true; 
+
+    this.obsSubscription = this.srvWeather.getWeather().subscribe(
+      (data) => {
+        console.log(data)
+        this.temp=data.main.temp; 
+        this.windSpeed = data.wind.speed; 
+      });
+      (err:any) => {
+        console.log(err)
+      }
+    
+
+
   }
 
 }

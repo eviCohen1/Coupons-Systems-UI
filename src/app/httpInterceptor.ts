@@ -8,9 +8,17 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(private cookieService: CookieService ) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    request = request.clone({
-      withCredentials: true,
-    });
+    
+    if(request.url === 'https://openweathermap.org/data/2.5/weather?q=Tel%20Aviv,IL&appid=b6907d289e10d714a6e88b30761fae22')
+    { 
+      request = request.clone({
+        withCredentials: false,
+      });
+    }else { 
+      request = request.clone({
+        withCredentials: true,
+      });
+    }
     return next.handle(request);
   }
 

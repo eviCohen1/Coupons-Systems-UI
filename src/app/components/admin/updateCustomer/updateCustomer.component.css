@@ -40,11 +40,11 @@ nav ul li a:hover{
   background-color: #595968;
   }
 
-#active { 
-      color: #FFC312;
-      text-decoration: underline
+  a.active { 
+    color: #FFC312;
+    text-decoration: underline
 
-  }
+}
 
 /*Form CSS */ 
 

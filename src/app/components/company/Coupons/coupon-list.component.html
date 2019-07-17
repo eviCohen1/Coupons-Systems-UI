@@ -3,25 +3,28 @@
         <div class='row'>
             <span class='col-md-1' id = 'Filter'>Filter by:</span>
             <span class='col-md-2' ><input type='text' [(ngModel)]= 'listFilter'></span>
-            <span id = 'Filter' >Filtered by: {{listFilter}}</span>
+            <span id = 'Filter' >Filtered by: {{listFilter}}</span> 
+            <!-- <span id = 'addCoupon'><a [routerLink]="['/addCoupon']"><button type="button" class='btn btn-warning' style = "color:black"> Add Coupon</button> </a></span>   -->
+            <div class='row'>
+                    <div class="col-md-6">   
+                                        
+                    </div>
+                </div> 
         </div>
-        <div class='row'>
-            <div class="col-md-6">         
-            </div>
-        </div>   
+  
         <div class='table-responsive' *ngIf='coupons && coupons.length;else falsyTemplate'>
-            <table class='table table-hover'>
-                <thead class="thead-light" id ="thead">
+            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                <thead class="thead-light" id ="thead" >
                     <tr>
                         <th>
                             <button class='btn btn-warning' style = "color:black" (click) = 'toggleImage()'>
                                 {{showImage ? 'Hide':'Show'}} Image
                             </button>
                         </th> 
-                        <th>Title</th>
-                        <th>ID</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
+                        <th  class="th-sm">Title</th>
+                        <th  class="th-sm">ID</th>
+                        <th  class="th-sm">Start Date</th>
+                        <th >End Date</th>
                         <th>Amount</th>
                         <th>Coupon Type </th>
                         <th>Message </th>
@@ -35,18 +38,18 @@
                     <tr *ngFor='let coupon of coupons | couponFilter:listFilter' >
                         <td><img [src]='coupon.image' [title] = 'coupon.title' 
                             [style.width.px]='imageWidth' [style.margin.px]='imageMargin' *ngIf = 'showImage'
-                             ></td>
+                            style="text-align-last: center" ></td>
                         
                         <td><a [routerLink] = " ['/coupon',coupon.id]">{{coupon.title| uppercase}}</a></td>
                         <td>{{coupon.id}}</td>
                         <td>{{coupon.startDate}}</td>
                         <td>{{coupon.endDate}}</td>
                         <td>{{coupon.amount}}</td>
-                        <th>{{coupon.type}} </th>
-                        <th>{{coupon.message|uppercase}} </th>
-                        <th>{{coupon.price| currency : 'USD': 'symbol': '1.1-2'}} </th>
-                        <th>{{coupon.active}}</th> 
-                        <td><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCoupon(coupon)'> Remove</button></td> 
+                        <td>{{coupon.type}} </td>
+                        <td>{{coupon.message|uppercase}} </td>
+                        <td>{{coupon.price| currency : 'USD': 'symbol': '1.1-2'}} </td>
+                        <td>{{coupon.active}}</td> 
+                        <td><button type="button" id = "deleteButton" class='btn btn-warning' style = "font-family: Helvetica Neue,Helvetica,Arial,sans-serif; color:black "  (click) ='deleteCoupon(coupon)'> Remove</button></td> 
                     </tr>
                 </tbody>
             </table>
@@ -58,5 +61,20 @@
         <h3>No Recordes were found!!</h3>
     </ng-template> -->
     <div><br></div>
-    <div class="loader" *ngIf="loading">please, wait a second...</div>
+    <!-- <div class="loader" *ngIf="loading">please, wait a second...</div> -->
+          <div class="preloader-wrapper big active" *ngIf="loading">
+                <div class="spinner-layer spinner-yellow-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+              
+
 </div>

@@ -4,7 +4,7 @@
     .header span { 
         padding: 10px;
        margin-left: 40px;  
-        font-size: 25px;
+        font-size: 20px;
         color: #FFC312;
         font-family: "Times New Roman", Times, serif;
     }
@@ -36,7 +36,7 @@
       float: right;
       color: antiquewhite;
       font-family: "Times New Roman", Times, serif;
-      font-size:25px; 
+      font-size:10px; 
       padding-bottom: 15px
     }
   

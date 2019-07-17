@@ -10,7 +10,7 @@
           </div>
       </div>   
       <div class='table-responsive' *ngIf='company && company.length;else falsyTemplate'>
-          <table class='table table-hover'>
+          <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
               <thead class="thead-light" id ="thead">
                   <tr>
                       <th>ID</th>
@@ -23,11 +23,11 @@
               <tbody>
 
                   <tr *ngFor='let company of company | companyFilter:listFilter' > 
-                      <th>{{company.id}} </th>
-                      <th>{{company.compName}} </th>
-                      <th>{{company.password}} </th>
-                      <th>{{company.email}}</th> 
-                      <th><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCompany(company)'> Remove</button></th> 
+                      <td>{{company.id}} </td>
+                      <td>{{company.compName}} </td>
+                      <td>{{company.password}} </td>
+                      <td>{{company.email}}</td> 
+                      <td><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCompany(company)'> Remove</button></td> 
                   </tr>
               </tbody>
           </table>

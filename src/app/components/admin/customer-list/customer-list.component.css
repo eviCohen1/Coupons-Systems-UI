@@ -40,7 +40,7 @@ nav ul li a:hover{
     background-color: #595968;
     }
 
-#active { 
+a:active { 
         color: #FFC312;
         text-decoration: underline
 

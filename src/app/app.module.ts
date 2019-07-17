@@ -48,6 +48,7 @@ import { PurchaseCouponService } from './components/customer/purchase-coupon/pur
 import { CouponListComponentCustomer } from './components/customer/coupon-list/coupon-list.component';
 import { CouponServiceCustomer } from './components/customer/coupon-list/Coupons/coupon.service';
 import { CouponDetailComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-detail.component';
+import { WeatherService } from './components/header/weather.service';
 
 
 
@@ -83,6 +84,7 @@ import { CouponDetailComponentCustomer } from './components/customer/coupon-list
       couponListComponent,
       CouponList,
       CouponDetailComponentCustomer
+     
        
         ],
   imports: [BrowserModule,
@@ -107,7 +109,8 @@ import { CouponDetailComponentCustomer } from './components/customer/coupon-list
               AddCouponService,
               UpdateCouponService,
               PurchaseCouponService,
-              CouponServiceCustomer
+              CouponServiceCustomer,
+              WeatherService
               ],
   bootstrap: [LayoutComponent]
 })

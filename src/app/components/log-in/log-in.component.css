@@ -26,37 +26,38 @@ align-content: center;
 }
 
 .card{
-height: 370px;
+height: 400px;
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
+width: 500x;
 background-color: rgba(0,0,0,0.5) !important;
 }
 .card-header{
    padding: 20px;
-   margin-left: 68px 
+   margin-left: 40px 
 } 
      
 
 .card-header span{
-    font-size: 25px;
+    font-size: 30px;
     color: #FFC312;
-    margin: 50px;
+    margin: 40px;
 
     }
 
 .powerBy { 
-    font-size: 25px;
+    font-size: 14px;
     color: #FFC312;
-    margin: 60px;
-    padding-left: 25px
+    margin: 0px;
+    padding-left: 0px
 
 }
 
 .submit{ 
-    padding-left: 150px; 
+    /* padding-left: 150px; 
     /* padding: 10px */
-    padding-top: 10px
+    padding-top: 10px; 
+    margin-left : 100px; 
 }
 
 .d-flex { 
@@ -157,3 +158,5 @@ color: white;
        padding: 5px;
        width: 45px;
         }
+
+    

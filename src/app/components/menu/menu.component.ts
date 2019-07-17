@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
   public isCustomerLoggedIn:boolean   = false; 
   public isCompanyLoggedIn:boolean  = false; 
   public isUserLoggedIn: boolean  = false; 
+  public title:String; 
 
   constructor(private service : JoinService,private router: Router) { }
 
@@ -27,6 +28,8 @@ export class MenuComponent implements OnInit {
       this.isCustomerLoggedIn = join[3]; 
 
     })
+
+    this.title = sessionStorage.getItem("userName"); 
     
   }
 
