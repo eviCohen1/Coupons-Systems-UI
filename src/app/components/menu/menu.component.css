@@ -38,6 +38,7 @@ img {
 .main-menu:hover,nav.main-menu.expanded {
 width:250px;
 overflow:visible;
+opacity: 0.9;
 }
 
 .main-menu {
@@ -143,6 +144,7 @@ float: left;
 background:none;
 width: 100%;
 height: 100%;
+
 }
 @font-face {
   font-family: 'Titillium Web';

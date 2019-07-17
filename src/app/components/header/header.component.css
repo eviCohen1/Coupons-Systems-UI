@@ -2,9 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
     .header span { 
-        padding: 10px;
-       margin-left: 40px;  
-        font-size: 20px;
+        padding: 5px;
+       margin-left: 10px;  
+        font-size: 17px;
         color: #FFC312;
         font-family: "Times New Roman", Times, serif;
     }
@@ -36,7 +36,7 @@
       float: right;
       color: antiquewhite;
       font-family: "Times New Roman", Times, serif;
-      font-size:10px; 
+      font-size:30px; 
       padding-bottom: 15px
     }
   
