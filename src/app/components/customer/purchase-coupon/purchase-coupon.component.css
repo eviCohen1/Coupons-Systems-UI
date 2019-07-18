@@ -5,12 +5,13 @@
     text-align: center;
     /* padding: 5% ;  */
     /* border-spacing: 1px; */
-    width: 100px;
-    height: 350px;
+    width: 150px;
+    height: 400px;
   }
   
   .card-img-top{
-    padding-top: 10% ; 
+    padding: 10% ;
+    padding-bottom: 0;
     position: center;
   
   }

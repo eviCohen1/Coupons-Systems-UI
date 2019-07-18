@@ -46,7 +46,7 @@ nav ul li a:hover{
 
     }
 
-    .loader { 
+    .loader, .spinner-border  { 
       font-size: 25px;
       color: #595968;
       padding-bottom: 15px;
