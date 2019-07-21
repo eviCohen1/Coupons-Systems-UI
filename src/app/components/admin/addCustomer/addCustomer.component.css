@@ -22,7 +22,8 @@ nav{
 }
 .second_navbar { 
   background-color: #595968;
-  border-color: #595968
+  border-color: #595968; 
+  height: 50; 
 }
 .navbar-brand { 
   font-size: 25px;

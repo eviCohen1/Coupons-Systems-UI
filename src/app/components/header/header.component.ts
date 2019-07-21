@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   public temp : number; 
   public windSpeed : number;
   public currentTime: Date;
+  public icon : String ; 
+  public weather : [] ; 
   obsSubscription:Subscription;
   constructor(private srvWeather:WeatherService) { };
   @Input() public isUserLoggedIn: boolean 
@@ -30,6 +32,9 @@ export class HeaderComponent implements OnInit {
         console.log(data)
         this.temp=data.main.temp; 
         this.windSpeed = data.wind.speed; 
+        this.weather = data.weather[0]; 
+        this.icon = this.weather["icon"]; 
+        console.log(this.icon)
       });
       (err:any) => {
         console.log(err)

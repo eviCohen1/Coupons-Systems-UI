@@ -43,6 +43,7 @@ export class couponListComponent implements OnInit, DoCheck {
             (data) => {
               this.coupons=data
               this.loading = false;
+              console.log(data)
             });
             (err:any) => {
               this.loading = false;

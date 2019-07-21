@@ -32,10 +32,11 @@ tr:nth-child(first){
 
 .panel-body{ 
     background-color:none ; 
+    padding: 100 px 
 }
 .panel{ 
     border-color: none;
-    padding: 40 px 
+    padding: 100 px 
 }
 
 
