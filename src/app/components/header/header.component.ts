@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
         this.windSpeed = data.wind.speed; 
         this.weather = data.weather[0]; 
         this.icon = this.weather["icon"]; 
-        console.log(this.icon)
+      
       });
       (err:any) => {
         console.log(err)

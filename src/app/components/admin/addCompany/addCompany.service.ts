@@ -23,9 +23,6 @@ export class AddCompanyService {
     addCompany(name,pass,email):Observable<any> 
     { 
 
-        let headers = new Headers({
-            'Content-Type': 'application/json'
-          });
 
         let params = new HttpParams({
             fromObject: {
