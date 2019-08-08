@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -49,7 +48,10 @@ import { CouponListComponentCustomer } from './components/customer/coupon-list/c
 import { CouponServiceCustomer } from './components/customer/coupon-list/Coupons/coupon.service';
 import { CouponDetailComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-detail.component';
 import { WeatherService } from './components/header/weather.service';
-
+import {  ReportsComponent } from './components/admin/reports/reports.component';
+import { CustomersIncomeComponent } from './components/admin/reports/customerIncome/customerIncome.component';
+import { CustomersIncomeService } from './components/admin/reports/customerIncome/customerIncome.service';
+import { CustomerIncomeFilterPipe } from './components/admin/reports/customerIncome/customerIncome-filter.pipe';
 
 
 @NgModule({
@@ -83,9 +85,13 @@ import { WeatherService } from './components/header/weather.service';
       CouponListComponentCustomer,
       couponListComponent,
       CouponList,
-      CouponDetailComponentCustomer
+      CouponDetailComponentCustomer,
+      ReportsComponent,
+      CustomersIncomeComponent,
+      CustomerIncomeFilterPipe
      
-       
+    
+
         ],
   imports: [BrowserModule,
             AppRoutingModule,
@@ -110,7 +116,8 @@ import { WeatherService } from './components/header/weather.service';
               UpdateCouponService,
               PurchaseCouponService,
               CouponServiceCustomer,
-              WeatherService
+              WeatherService,
+              CustomersIncomeService            
               ],
   bootstrap: [LayoutComponent]
 })
