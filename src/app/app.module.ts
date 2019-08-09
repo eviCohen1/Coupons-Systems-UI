@@ -52,6 +52,12 @@ import {  ReportsComponent } from './components/admin/reports/reports.component'
 import { CustomersIncomeComponent } from './components/admin/reports/customerIncome/customerIncome.component';
 import { CustomersIncomeService } from './components/admin/reports/customerIncome/customerIncome.service';
 import { CustomerIncomeFilterPipe } from './components/admin/reports/customerIncome/customerIncome-filter.pipe';
+import {  CompanysIncomeComponent } from './components/admin/reports/companyIncome/companyIncome.component';
+import { CompanysIncomeService } from './components/admin/reports/companyIncome/company.service.service';
+import { CompanyIncomeFilterPipe } from './components/admin/reports/companyIncome/companyIncome-filter.pipe';
+import { AllsIncomeComponent } from './components/admin/reports/allIncome/allIncome.component';
+import { AllIncomeService } from './components/admin/reports/allIncome/allIncome.service';
+import { AllIncomeFilterPipe } from './components/admin/reports/allIncome/allIncome-filter.pipe';
 
 
 @NgModule({
@@ -88,7 +94,11 @@ import { CustomerIncomeFilterPipe } from './components/admin/reports/customerInc
       CouponDetailComponentCustomer,
       ReportsComponent,
       CustomersIncomeComponent,
-      CustomerIncomeFilterPipe
+      CustomerIncomeFilterPipe,
+      CompanysIncomeComponent,
+      CompanyIncomeFilterPipe,
+      AllsIncomeComponent,
+      AllIncomeFilterPipe
      
     
 
@@ -117,7 +127,9 @@ import { CustomerIncomeFilterPipe } from './components/admin/reports/customerInc
               PurchaseCouponService,
               CouponServiceCustomer,
               WeatherService,
-              CustomersIncomeService            
+              CustomersIncomeService,
+              CompanysIncomeService,
+              AllIncomeService         
               ],
   bootstrap: [LayoutComponent]
 })

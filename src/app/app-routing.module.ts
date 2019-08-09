@@ -24,6 +24,8 @@ import { CouponListComponentCustomer } from './components/customer/coupon-list/c
 import { CouponDetailComponentCustomer } from './components/customer/coupon-list/Coupons/coupon-detail.component';
 import { ReportsComponent } from './components/admin/reports/reports.component';
 import { CustomersIncomeComponent } from './components/admin/reports/customerIncome/customerIncome.component';
+import { CompanysIncomeComponent } from './components/admin/reports/companyIncome/companyIncome.component';
+import { AllsIncomeComponent } from './components/admin/reports/allIncome/allIncome.component';
 
 const routes: Routes = [
   {path: '' , component:LogInComponent},
@@ -48,7 +50,11 @@ const routes: Routes = [
   {path : "updateCompanyCoupon", component:UpdateCouponComponent},
   {path: 'couponCust/:id',component:CouponDetailComponentCustomer},
   {path : "incomeReports", component:ReportsComponent},
-  {path : "CustomersIncome", component:CustomersIncomeComponent}
+  {path : "CustomersIncome", component:CustomersIncomeComponent},
+  {path : "CompanyIncome", component:CompanysIncomeComponent}, 
+  {path : "AllIncom", component:AllsIncomeComponent}
+  
+  
   
  
   
