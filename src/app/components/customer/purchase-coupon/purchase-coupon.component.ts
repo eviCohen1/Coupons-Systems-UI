@@ -219,7 +219,7 @@ export class PurchaseCouponComponent implements OnInit {
     this.obsSubscription = this.srvAddCoupon.addCoupon(coupon)
     .subscribe( 
      (data) => { 
-        alert(data); 
+        alert("Success to purchase a coupon, you charged " + coupon.price + "$ by eCoupon system"); 
         this.loading = false;
         this._router.navigate(["./puschasedCoupon"]);
     },

@@ -1,3 +1,10 @@
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 <header>
   <nav class = "second_navbar"> 
           <div> 
@@ -9,7 +16,7 @@
           <li><a [routerLink]="['/companyCoupons']"> Coupon List</a></li>
           <li><a [routerLink]="['/addCoupon']" > Add New Coupon</a></li>
           <li><a [routerLink]="['/updateCompanyCoupon']" style= "color:#FFC312"> Update Coupon</a></li>
-          
+          <li><a [routerLink]="['/CompanyFinanceReport']" > Finance Report</a></li>
         </ul>
           </div>
 
@@ -25,27 +32,7 @@
     <label for="lname">Amount </label>
     <input type="number" id="amount" name="amount" placeholder="Insert Amount" ngModel required>
     
-    <!-- <label for="fname">Type of the Coupon</label>
-    <select id="type" name="type"  palceholder="Insert Coupon Type" required ngModel>
-          <option value="RESTURANTS">RESTURANTS</option>
-          <option value="ELECTRICITY">ELECTRICITY</option>
-          <option value="FOOD">FOOD</option>
-          <option value="HEALTH">HEALTH</option>
-          <option value="SPORTS">SPORTS</option>
-          <option value="CAMPING">CAMPING</option>
-          <option value="TRAVELING">TRAVELING</option>
-    </select>  -->
-   
-    <!-- <label for="lname">Description</label>
-    <input type="text" maxlength="100" id="message" name="message" placeholder="Insert Description"  ngModel required>
- 
-    <label for="lname">Coupon Pricing</label>
-    <input type="number" id="price" name="price" placeholder="Insert Coupon Pricing"  ngModel required>
-
-    <label for="lname">Image</label>
-    <input type="text" id="image" name="image" placeholder="Insert Coupon Image URL"  ngModel required> -->
-
-    <label for="fname">Coupon Available</label>
+        <label for="fname">Coupon Available</label>
     <select id="active" name="active"  palceholder="Insert the status of the coupon" required ngModel>
           <option value= true >Available</option>
           <option value= false >Not Available</option>
@@ -59,3 +46,21 @@
     <div><br></div>
     <div class="loader" *ngIf="loading">please, wait a second...</div>
 </div>
+
+<div class="modal fade" id="myModal" role="dialog" #myModal >
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">e-Coupon charged Company</h4>
+      </div>
+      <div class="modal-body">
+        <p>Update Coupon 10$</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

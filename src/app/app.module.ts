@@ -58,6 +58,9 @@ import { CompanyIncomeFilterPipe } from './components/admin/reports/companyIncom
 import { AllsIncomeComponent } from './components/admin/reports/allIncome/allIncome.component';
 import { AllIncomeService } from './components/admin/reports/allIncome/allIncome.service';
 import { AllIncomeFilterPipe } from './components/admin/reports/allIncome/allIncome-filter.pipe';
+import { CompanyFinanceComponent } from './components/company/report/companyIncome.component';
+import { CompanyFinanceService } from './components/company/report/company.service.service';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
@@ -98,7 +101,9 @@ import { AllIncomeFilterPipe } from './components/admin/reports/allIncome/allInc
       CompanysIncomeComponent,
       CompanyIncomeFilterPipe,
       AllsIncomeComponent,
-      AllIncomeFilterPipe
+      AllIncomeFilterPipe,
+      CompanyFinanceComponent,
+      ModalComponent
      
     
 
@@ -106,7 +111,7 @@ import { AllIncomeFilterPipe } from './components/admin/reports/allIncome/allInc
   imports: [BrowserModule,
             AppRoutingModule,
             HttpClientModule,
-            FormsModule
+            FormsModule,
           ],
   providers: [CouponService,
               JoinService,
@@ -129,7 +134,8 @@ import { AllIncomeFilterPipe } from './components/admin/reports/allIncome/allInc
               WeatherService,
               CustomersIncomeService,
               CompanysIncomeService,
-              AllIncomeService         
+              AllIncomeService,
+              CompanyFinanceService         
               ],
   bootstrap: [LayoutComponent]
 })

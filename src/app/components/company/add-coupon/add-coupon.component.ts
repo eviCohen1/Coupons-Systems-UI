@@ -47,7 +47,7 @@ export class AddCouponComponent implements OnInit {
     this.obsSubscription = this.srvAddCoupon.addCoupon(this.coupon)
     .subscribe( 
         (data) => { 
-            alert(data); 
+            alert("success to create a coupon, you charged 100 $ by eCoupon system"); 
             this.loading = false;
             this._router.navigate(["./companyCoupons"]);
         },
