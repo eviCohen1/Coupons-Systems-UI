@@ -38,7 +38,6 @@ export class UpdateCompanyComponent implements OnInit {
         .subscribe( 
             (data) => { 
                 this.response = data;
-                alert(this.response); 
                 this.loading = false;
                 this._router.navigate(["./companyList"]);
             },

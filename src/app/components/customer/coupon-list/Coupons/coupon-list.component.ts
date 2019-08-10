@@ -41,7 +41,7 @@ export class CouponList implements OnInit, DoCheck {
             });
             (err:any) => {
               this.loading = false;
-              console.log(err)
+              alert(err)
             }
     }
     ngDoCheck():void { 

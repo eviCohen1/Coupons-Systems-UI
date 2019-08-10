@@ -34,7 +34,6 @@ export class UpdateCustomerComponent implements OnInit {
         this.obsSubscription = this.srvUpdateCustomer.updateCustomer(this.customer).subscribe(
             (data) => { 
                 this.response = data;
-                alert(this.response); 
                 this.loading = false;
                 this._router.navigate(["./customerList"]);
             },

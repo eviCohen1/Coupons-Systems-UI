@@ -43,11 +43,10 @@ export class couponListComponent implements OnInit, DoCheck {
             (data) => {
               this.coupons=data
               this.loading = false;
-              console.log(data)
             });
             (err:any) => {
               this.loading = false;
-              console.log(err)
+              alert(err)
             }
     }
     ngDoCheck():void { 
@@ -66,8 +65,7 @@ export class couponListComponent implements OnInit, DoCheck {
 
         this.obsSubscription = this.srvProduct.deleteCoupon(this.coupon)
         .subscribe(
-          (data) => {  
-              alert(data);  
+          (data) => {   
               this.loading = false;
               this.getCompanyCoupons(); 
           },

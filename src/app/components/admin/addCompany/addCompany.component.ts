@@ -39,8 +39,7 @@ export class AddCompanyComponent implements OnInit {
         this.obsSubscription = this.srvAddCompany.addCompany(this.name,this.pass,this.email)
         .subscribe( 
             (data) => { 
-                this.response = data;
-                alert(this.response); 
+                this.response = data; 
                 this.loading = false;
                 this._router.navigate(["./companyList"]);
             },

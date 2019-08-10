@@ -41,7 +41,7 @@ export class CompanysIncomeComponent implements OnInit {
       });
       (err:any) => {
         this.loading = false;
-        console.log(err)
+        alert(err)
       }
 
   }

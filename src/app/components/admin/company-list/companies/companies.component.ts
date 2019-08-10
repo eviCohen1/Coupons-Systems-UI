@@ -42,8 +42,7 @@ export class CompaniesComponent implements OnInit {
 
       this.obsSubscription = this.srvProduct.deleteCompany(this.company)
       .subscribe(
-        (data) => {  
-            alert(data);  
+        (data) => {   
             this.loading = false;
             this.getCompanyTable(); 
         },
